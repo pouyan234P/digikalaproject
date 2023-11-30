@@ -3,9 +3,35 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Fromtend", "Fromtend", "{08B53080-AA67-4791-BB7B-8822106D6326}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mobile_api", "mobile_api", "{C258B62A-0D7B-484F-A6D6-D3A17790FE79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "digika.web", "digika.web\digika.web.csproj", "{32C614F1-482A-4B87-B368-EAD6896B3769}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "digika_mobileapp", "digika_mobileapp\digika_mobileapp.csproj", "{100D8638-E9FE-41F4-A455-5919FAE85130}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{32C614F1-482A-4B87-B368-EAD6896B3769}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32C614F1-482A-4B87-B368-EAD6896B3769}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32C614F1-482A-4B87-B368-EAD6896B3769}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32C614F1-482A-4B87-B368-EAD6896B3769}.Release|Any CPU.Build.0 = Release|Any CPU
+		{100D8638-E9FE-41F4-A455-5919FAE85130}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{100D8638-E9FE-41F4-A455-5919FAE85130}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{100D8638-E9FE-41F4-A455-5919FAE85130}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{100D8638-E9FE-41F4-A455-5919FAE85130}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{32C614F1-482A-4B87-B368-EAD6896B3769} = {08B53080-AA67-4791-BB7B-8822106D6326}
+		{100D8638-E9FE-41F4-A455-5919FAE85130} = {C258B62A-0D7B-484F-A6D6-D3A17790FE79}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {060C25D7-25D1-40B2-85CB-F5720C8BEEC8}
