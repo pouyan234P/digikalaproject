@@ -7,9 +7,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Fromtend", "Fromtend", "{08
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mobile_api", "mobile_api", "{C258B62A-0D7B-484F-A6D6-D3A17790FE79}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "digika.web", "digika.web\digika.web.csproj", "{32C614F1-482A-4B87-B368-EAD6896B3769}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "digikala.web", "digika.web\digikala.web.csproj", "{32C614F1-482A-4B87-B368-EAD6896B3769}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "digika_mobileapp", "digika_mobileapp\digika_mobileapp.csproj", "{100D8638-E9FE-41F4-A455-5919FAE85130}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "digika_mobileapp", "digika_mobileapp\digika_mobileapp.csproj", "{100D8638-E9FE-41F4-A455-5919FAE85130}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{4EEAE228-B525-4895-AC8A-7EA68A269F3C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Digikala.Services.Identity", "Digikala.Services.Identity\Digikala.Services.Identity.csproj", "{BC8B6F14-F75F-48CE-BFB1-014529523D6A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,6 +29,10 @@ Global
 		{100D8638-E9FE-41F4-A455-5919FAE85130}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{100D8638-E9FE-41F4-A455-5919FAE85130}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{100D8638-E9FE-41F4-A455-5919FAE85130}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC8B6F14-F75F-48CE-BFB1-014529523D6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC8B6F14-F75F-48CE-BFB1-014529523D6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC8B6F14-F75F-48CE-BFB1-014529523D6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC8B6F14-F75F-48CE-BFB1-014529523D6A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +40,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{32C614F1-482A-4B87-B368-EAD6896B3769} = {08B53080-AA67-4791-BB7B-8822106D6326}
 		{100D8638-E9FE-41F4-A455-5919FAE85130} = {C258B62A-0D7B-484F-A6D6-D3A17790FE79}
+		{BC8B6F14-F75F-48CE-BFB1-014529523D6A} = {4EEAE228-B525-4895-AC8A-7EA68A269F3C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {060C25D7-25D1-40B2-85CB-F5720C8BEEC8}

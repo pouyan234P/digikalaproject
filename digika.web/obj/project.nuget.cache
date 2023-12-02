@@ -1,8 +1,19 @@
 {
   "version": 2,
-  "dgSpecHash": "SOWRQA+MvycEU7lDVj6JnJ9LuvIL/RmhOCG4Qc1vn+rzRs28ieLSgjUgmvKNviYVW3fdF5gTf0ZgGSZGZVoU1w==",
+  "dgSpecHash": "IcteMQRjRMN6wYBb6Oy/4V85xU2bDKGJl8QbYEfuar+WMiOeBLMm2WQ/nEoA6WwiJ+sLxtsWxJglNUf3XVizdQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\pouyan\\Documents\\Visual Studio 2019\\project\\Digikala\\digika.web\\digika.web.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\pouyan\\Documents\\Visual Studio 2019\\project\\Digikala\\digika.web\\digikala.web.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\pouyan\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",
+    "C:\\Users\\pouyan\\.nuget\\packages\\mailkit\\4.3.0\\mailkit.4.3.0.nupkg.sha512",
+    "C:\\Users\\pouyan\\.nuget\\packages\\mimekit\\4.3.0\\mimekit.4.3.0.nupkg.sha512",
+    "C:\\Users\\pouyan\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
+    "C:\\Users\\pouyan\\.nuget\\packages\\system.formats.asn1\\7.0.0\\system.formats.asn1.7.0.0.nupkg.sha512",
+    "C:\\Users\\pouyan\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",
+    "C:\\Users\\pouyan\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\pouyan\\.nuget\\packages\\system.security.cryptography.cng\\5.0.0\\system.security.cryptography.cng.5.0.0.nupkg.sha512",
+    "C:\\Users\\pouyan\\.nuget\\packages\\system.security.cryptography.pkcs\\7.0.3\\system.security.cryptography.pkcs.7.0.3.nupkg.sha512",
+    "C:\\Users\\pouyan\\.nuget\\packages\\system.text.encoding.codepages\\7.0.0\\system.text.encoding.codepages.7.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
