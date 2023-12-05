@@ -1,4 +1,5 @@
 using Digikala.Services.CouponApi.Data;
+using Digikala.Services.CouponApi.Data.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -29,7 +30,9 @@ namespace Digikala.Services.CouponApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<Digikalacoupon>(x => x.UseSqlServer(Configuration.GetConnectionString("myconn")));
-
+            services.AddScoped<IDigicouponRepository, DigicouponRepository>();
+            services.AddScoped<IGiftcardRepository, GiftcardRepository>();
+            services.AddAutoMapper(typeof(Startup));
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

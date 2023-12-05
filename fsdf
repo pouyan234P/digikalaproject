@@ -1,0 +1,29 @@
+[33mcommit 5e29de1464af659b849df693eb47640e328e1b62[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m
+Author: pouyan <mikespro234@gmail.com>
+Date:   Tue Dec 5 02:51:42 2023 -0800
+
+    finish models and added to database
+
+[33mcommit b750eaeec7b5e903bd344555ea17808adf02fd4b[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: pouyan <mikespro234@gmail.com>
+Date:   Sun Dec 3 13:32:14 2023 -0800
+
+    add coupon service and fix folder identity to a correct position
+
+[33mcommit bdebc5c623dce58ede7268d93d9ce3258f162dbc[m
+Author: pouyan <mikespro234@gmail.com>
+Date:   Sat Dec 2 03:39:32 2023 -0800
+
+    finish identity server
+
+[33mcommit 7fb0aa39419613a21fe32b83a6da3d322e910ccf[m
+Author: pouyan <mikespro234@gmail.com>
+Date:   Thu Nov 30 00:09:22 2023 -0800
+
+    structure project
+
+[33mcommit 94c98e71cf12e1b4dc04541e60754891524fc303[m
+Author: pouyan <mikespro234@gmail.com>
+Date:   Wed Nov 29 23:08:37 2023 -0800
+
+    solution part
