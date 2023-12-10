@@ -10,8 +10,8 @@ namespace Digikala.Services.Shoppingcart.Models
     {
         [Key]
         public int id { get; set; }
-        public int Headerid { get; set; }
-        public int productid { get; set; }
+        public CartHeader Headerid { get; set; }
+        public Product productid { get; set; }
         public int Count { get; set; }
     }
 }

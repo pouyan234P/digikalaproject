@@ -4,14 +4,16 @@ using Digikala.Services.Shoppingcart.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Digikala.Services.Shoppingcart.Migrations
 {
     [DbContext(typeof(ShoppingcartDatacontext))]
-    partial class ShoppingcartDatacontextModelSnapshot : ModelSnapshot
+    [Migration("20231207212209_updatetablecartdetailforproductfrominttoproduct")]
+    partial class updatetablecartdetailforproductfrominttoproduct
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -47,15 +49,13 @@ namespace Digikala.Services.Shoppingcart.Migrations
                     b.Property<int>("Count")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Headeridid")
+                    b.Property<int>("Headerid")
                         .HasColumnType("int");
 
                     b.Property<int?>("productidid")
                         .HasColumnType("int");
 
                     b.HasKey("id");
-
-                    b.HasIndex("Headeridid");
 
                     b.HasIndex("productidid");
 
@@ -85,15 +85,9 @@ namespace Digikala.Services.Shoppingcart.Migrations
 
             modelBuilder.Entity("Digikala.Services.Shoppingcart.Models.Cartdetail", b =>
                 {
-                    b.HasOne("Digikala.Services.Shoppingcart.Models.CartHeader", "Headerid")
-                        .WithMany()
-                        .HasForeignKey("Headeridid");
-
                     b.HasOne("Digikala.Services.Shoppingcart.Models.Product", "productid")
                         .WithMany()
                         .HasForeignKey("productidid");
-
-                    b.Navigation("Headerid");
 
                     b.Navigation("productid");
                 });

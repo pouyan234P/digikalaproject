@@ -1,4 +1,5 @@
 using Digikala.Services.Shoppingcart.Data;
+using Digikala.Services.Shoppingcart.Data.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -29,6 +30,10 @@ namespace Digikala.Services.Shoppingcart
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ShoppingcartDatacontext>(x => x.UseSqlServer(Configuration.GetConnectionString("myconn")));
+            services.AddAutoMapper(typeof(Startup));
+            services.AddScoped<IProductRepository,ProductRepository>();
+            services.AddScoped<ICartdetailRepository, CartdetialRepository>();
+            services.AddScoped<ICartheaderRepository, CartheaderRepository>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
