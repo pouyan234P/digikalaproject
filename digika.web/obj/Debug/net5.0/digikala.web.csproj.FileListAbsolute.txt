@@ -16,7 +16,6 @@ C:\Users\pouyan\Documents\Visual Studio 2019\project\Digikala\digika.web\bin\Deb
 C:\Users\pouyan\Documents\Visual Studio 2019\project\Digikala\digika.web\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\pouyan\Documents\Visual Studio 2019\project\Digikala\digika.web\bin\Debug\net5.0\System.Security.Cryptography.Pkcs.dll
 C:\Users\pouyan\Documents\Visual Studio 2019\project\Digikala\digika.web\bin\Debug\net5.0\System.Text.Encoding.CodePages.dll
-C:\Users\pouyan\Documents\Visual Studio 2019\project\Digikala\digika.web\obj\Debug\net5.0\digikala.web.csproj.AssemblyReference.cache
 C:\Users\pouyan\Documents\Visual Studio 2019\project\Digikala\digika.web\obj\Debug\net5.0\digikala.web.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\pouyan\Documents\Visual Studio 2019\project\Digikala\digika.web\obj\Debug\net5.0\digikala.web.AssemblyInfoInputs.cache
 C:\Users\pouyan\Documents\Visual Studio 2019\project\Digikala\digika.web\obj\Debug\net5.0\digikala.web.AssemblyInfo.cs
@@ -45,3 +44,4 @@ C:\Users\pouyan\Documents\Visual Studio 2019\project\Digikala\digika.web\obj\Deb
 C:\Users\pouyan\Documents\Visual Studio 2019\project\Digikala\digika.web\obj\Debug\net5.0\ref\digikala.web.dll
 C:\Users\pouyan\Documents\Visual Studio 2019\project\Digikala\digika.web\obj\Debug\net5.0\digikala.web.pdb
 C:\Users\pouyan\Documents\Visual Studio 2019\project\Digikala\digika.web\obj\Debug\net5.0\digikala.web.genruntimeconfig.cache
+C:\Users\pouyan\Documents\Visual Studio 2019\project\Digikala\digika.web\obj\Debug\net5.0\digikala.web.csprojAssemblyReference.cache

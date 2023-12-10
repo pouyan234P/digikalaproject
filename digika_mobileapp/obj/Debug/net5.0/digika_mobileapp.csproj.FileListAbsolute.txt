@@ -11,7 +11,6 @@ C:\Users\pouyan\Documents\Visual Studio 2019\project\Digikala\digika_mobileapp\b
 C:\Users\pouyan\Documents\Visual Studio 2019\project\Digikala\digika_mobileapp\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\pouyan\Documents\Visual Studio 2019\project\Digikala\digika_mobileapp\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\pouyan\Documents\Visual Studio 2019\project\Digikala\digika_mobileapp\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Users\pouyan\Documents\Visual Studio 2019\project\Digikala\digika_mobileapp\obj\Debug\net5.0\digika_mobileapp.csproj.AssemblyReference.cache
 C:\Users\pouyan\Documents\Visual Studio 2019\project\Digikala\digika_mobileapp\obj\Debug\net5.0\digika_mobileapp.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\pouyan\Documents\Visual Studio 2019\project\Digikala\digika_mobileapp\obj\Debug\net5.0\digika_mobileapp.AssemblyInfoInputs.cache
 C:\Users\pouyan\Documents\Visual Studio 2019\project\Digikala\digika_mobileapp\obj\Debug\net5.0\digika_mobileapp.AssemblyInfo.cs
@@ -27,3 +26,4 @@ C:\Users\pouyan\Documents\Visual Studio 2019\project\Digikala\digika_mobileapp\o
 C:\Users\pouyan\Documents\Visual Studio 2019\project\Digikala\digika_mobileapp\obj\Debug\net5.0\ref\digika_mobileapp.dll
 C:\Users\pouyan\Documents\Visual Studio 2019\project\Digikala\digika_mobileapp\obj\Debug\net5.0\digika_mobileapp.pdb
 C:\Users\pouyan\Documents\Visual Studio 2019\project\Digikala\digika_mobileapp\obj\Debug\net5.0\digika_mobileapp.genruntimeconfig.cache
+C:\Users\pouyan\Documents\Visual Studio 2019\project\Digikala\digika_mobileapp\obj\Debug\net5.0\digika_mobileapp.csprojAssemblyReference.cache

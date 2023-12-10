@@ -52,7 +52,6 @@ C:\Users\pouyan\Documents\Visual Studio 2019\project\Digikala\Services\Digikala.
 C:\Users\pouyan\Documents\Visual Studio 2019\project\Digikala\Services\Digikala.Services.CouponApi\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
 C:\Users\pouyan\Documents\Visual Studio 2019\project\Digikala\Services\Digikala.Services.CouponApi\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\pouyan\Documents\Visual Studio 2019\project\Digikala\Services\Digikala.Services.CouponApi\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\pouyan\Documents\Visual Studio 2019\project\Digikala\Services\Digikala.Services.CouponApi\obj\Debug\net5.0\Digikala.Services.CouponApi.csproj.AssemblyReference.cache
 C:\Users\pouyan\Documents\Visual Studio 2019\project\Digikala\Services\Digikala.Services.CouponApi\obj\Debug\net5.0\Digikala.Services.CouponApi.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\pouyan\Documents\Visual Studio 2019\project\Digikala\Services\Digikala.Services.CouponApi\obj\Debug\net5.0\Digikala.Services.CouponApi.AssemblyInfoInputs.cache
 C:\Users\pouyan\Documents\Visual Studio 2019\project\Digikala\Services\Digikala.Services.CouponApi\obj\Debug\net5.0\Digikala.Services.CouponApi.AssemblyInfo.cs
@@ -68,3 +67,4 @@ C:\Users\pouyan\Documents\Visual Studio 2019\project\Digikala\Services\Digikala.
 C:\Users\pouyan\Documents\Visual Studio 2019\project\Digikala\Services\Digikala.Services.CouponApi\obj\Debug\net5.0\ref\Digikala.Services.CouponApi.dll
 C:\Users\pouyan\Documents\Visual Studio 2019\project\Digikala\Services\Digikala.Services.CouponApi\obj\Debug\net5.0\Digikala.Services.CouponApi.pdb
 C:\Users\pouyan\Documents\Visual Studio 2019\project\Digikala\Services\Digikala.Services.CouponApi\obj\Debug\net5.0\Digikala.Services.CouponApi.genruntimeconfig.cache
+C:\Users\pouyan\Documents\Visual Studio 2019\project\Digikala\Services\Digikala.Services.CouponApi\obj\Debug\net5.0\Digikala.Services.CouponApi.csprojAssemblyReference.cache
