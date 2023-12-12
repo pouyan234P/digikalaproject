@@ -13,6 +13,6 @@ namespace Digikala.Services.Checkout.Data
         {
 
         }
-        DbSet<Summary> summaries { get; set; }
+       public DbSet<Summary> summaries { get; set; }
     }
 }
