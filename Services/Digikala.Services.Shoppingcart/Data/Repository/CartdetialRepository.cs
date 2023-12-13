@@ -18,6 +18,7 @@ namespace Digikala.Services.Shoppingcart.Data.Repository
         public async Task<Cartdetail> AddCartdetail(Cartdetail cartdetail)
         {
             await _db.cartdetails.AddAsync(cartdetail);
+            _db.SaveChanges();
             var mycartdetail = await _db.cartdetails.Select(x => x).LastOrDefaultAsync();
             return mycartdetail;
         }

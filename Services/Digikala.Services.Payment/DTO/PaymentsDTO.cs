@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Digikala.Services.Payment.Models
+namespace Digikala.Services.Payment.DTO
 {
-    public class Payments
+    public class PaymentsDTO
     {
         public int id { get; set; }
         public string Bank { get; set; }

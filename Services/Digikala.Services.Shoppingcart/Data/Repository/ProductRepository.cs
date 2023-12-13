@@ -18,6 +18,7 @@ namespace Digikala.Services.Shoppingcart.Data.Repository
         public async Task<Product> Addproduct(Product product)
         {
             await _db.products.AddAsync(product);
+            _db.SaveChanges();
             var myproduct = await _db.products.Select(x => x).LastOrDefaultAsync();
             return product;
         }

@@ -18,6 +18,7 @@ namespace Digikala.Services.Checkout.Data.Repository
         public async Task<Summary> Addsummary(Summary summary)
         {
             await _db.summaries.AddAsync(summary);
+            _db.SaveChanges();
             var mysummary = await _db.summaries.Select(x => x).LastOrDefaultAsync();
             return mysummary;
         }

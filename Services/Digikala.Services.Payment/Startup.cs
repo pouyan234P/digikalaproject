@@ -29,7 +29,7 @@ namespace Digikala.Services.Payment
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<PaymentDatacontext>(x => x.UseSqlServer(Configuration.GetConnectionString("myconn")));
-
+            services.AddAutoMapper(typeof(Startup));
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

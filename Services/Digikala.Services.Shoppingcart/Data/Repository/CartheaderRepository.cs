@@ -18,6 +18,7 @@ namespace Digikala.Services.Shoppingcart.Data.Repository
         public async Task<CartHeader> AddCartheader(CartHeader cartHeader)
         {
             await _db.cartHeaders.AddAsync(cartHeader);
+            _db.SaveChanges();
             var mycartheader = await _db.cartHeaders.Select(x => x).LastOrDefaultAsync();
             return mycartheader;
         }

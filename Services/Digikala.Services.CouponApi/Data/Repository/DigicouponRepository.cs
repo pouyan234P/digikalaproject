@@ -17,6 +17,7 @@ namespace Digikala.Services.CouponApi.Data.Repository
         public async void Adddigicoupon(digicoupon digicoupon)
         {
             await _digikalacoupon.digicoupons.AddAsync(digicoupon);
+            _digikalacoupon.SaveChanges()
             _digikalacoupon.SaveChanges();
         }
     }
