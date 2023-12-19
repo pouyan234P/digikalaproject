@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\pouyan\\Documents\\Visual Studio 2019\\project\\Digikala\\Services\\Digikala.Services.Identity\\Digikala.Services.Identity.csproj": {}
+    "C:\\Users\\pouyan\\Documents\\Visual Studio 2019\\project\\digikalaproject\\Services\\Digikala.Services.Identity\\Digikala.Services.Identity.csproj": {}
   },
   "projects": {
-    "C:\\Users\\pouyan\\Documents\\Visual Studio 2019\\project\\Digikala\\Services\\Digikala.Services.Identity\\Digikala.Services.Identity.csproj": {
+    "C:\\Users\\pouyan\\Documents\\Visual Studio 2019\\project\\digikalaproject\\Services\\Digikala.Services.Identity\\Digikala.Services.Identity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pouyan\\Documents\\Visual Studio 2019\\project\\Digikala\\Services\\Digikala.Services.Identity\\Digikala.Services.Identity.csproj",
+        "projectUniqueName": "C:\\Users\\pouyan\\Documents\\Visual Studio 2019\\project\\digikalaproject\\Services\\Digikala.Services.Identity\\Digikala.Services.Identity.csproj",
         "projectName": "Digikala.Services.Identity",
-        "projectPath": "C:\\Users\\pouyan\\Documents\\Visual Studio 2019\\project\\Digikala\\Services\\Digikala.Services.Identity\\Digikala.Services.Identity.csproj",
+        "projectPath": "C:\\Users\\pouyan\\Documents\\Visual Studio 2019\\project\\digikalaproject\\Services\\Digikala.Services.Identity\\Digikala.Services.Identity.csproj",
         "packagesPath": "C:\\Users\\pouyan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pouyan\\Documents\\Visual Studio 2019\\project\\Digikala\\Services\\Digikala.Services.Identity\\obj\\",
+        "outputPath": "C:\\Users\\pouyan\\Documents\\Visual Studio 2019\\project\\digikalaproject\\Services\\Digikala.Services.Identity\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\pouyan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -101,7 +101,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.416\\RuntimeIdentifierGraph.json"
         }
       }
     }

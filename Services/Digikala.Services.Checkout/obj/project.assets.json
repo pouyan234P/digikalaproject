@@ -6092,11 +6092,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pouyan\\Documents\\Visual Studio 2019\\project\\Digikala\\Services\\Digikala.Services.Checkout\\Digikala.Services.Checkout.csproj",
+      "projectUniqueName": "C:\\Users\\pouyan\\Documents\\Visual Studio 2019\\project\\digikalaproject\\Services\\Digikala.Services.Checkout\\Digikala.Services.Checkout.csproj",
       "projectName": "Digikala.Services.Checkout",
-      "projectPath": "C:\\Users\\pouyan\\Documents\\Visual Studio 2019\\project\\Digikala\\Services\\Digikala.Services.Checkout\\Digikala.Services.Checkout.csproj",
+      "projectPath": "C:\\Users\\pouyan\\Documents\\Visual Studio 2019\\project\\digikalaproject\\Services\\Digikala.Services.Checkout\\Digikala.Services.Checkout.csproj",
       "packagesPath": "C:\\Users\\pouyan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pouyan\\Documents\\Visual Studio 2019\\project\\Digikala\\Services\\Digikala.Services.Checkout\\obj\\",
+      "outputPath": "C:\\Users\\pouyan\\Documents\\Visual Studio 2019\\project\\digikalaproject\\Services\\Digikala.Services.Checkout\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\pouyan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6168,7 +6168,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.416\\RuntimeIdentifierGraph.json"
       }
     }
   }

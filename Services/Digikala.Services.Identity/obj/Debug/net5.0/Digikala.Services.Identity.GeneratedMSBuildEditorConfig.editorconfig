@@ -6,3 +6,5 @@ build_property.ProjectTypeGuids =
 build_property.PublishSingleFile = 
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
+build_property.RootNamespace = Digikala.Services.Identity
+build_property.ProjectDir = C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Identity\

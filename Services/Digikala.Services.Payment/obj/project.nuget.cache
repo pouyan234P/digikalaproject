@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "uNCAFPypkedaoZ0cdwAcuoKTyhV3t+B8yrjGZdgjGKLguBQh5PagGr2fbFiMgS2J+ekx/HrKh4cf+7leE9suJw==",
+  "dgSpecHash": "cpWBEligKXxnctJKLXAtx3DIYf7/ImFBiPuu/VcfE/l5nFjIlMHppWA257erho6HtSN3rWKrPDVW8ZHkj8Zqhg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\pouyan\\Documents\\Visual Studio 2019\\project\\Digikala\\Services\\Digikala.Services.Payment\\Digikala.Services.Payment.csproj",
+  "projectFilePath": "C:\\Users\\pouyan\\Documents\\Visual Studio 2019\\project\\digikalaproject\\Services\\Digikala.Services.Payment\\Digikala.Services.Payment.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pouyan\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\pouyan\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

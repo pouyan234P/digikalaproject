@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "60PySLy8O4rB4VuFYqrSFWJfQ0VmOp/ROEVnxxymSlAtmKVx8gJJx30YRVlfOqc7J4hyvebs3/8Gm9de+MWMSA==",
+  "dgSpecHash": "0SLJuRFEJScKacT8q12DhrB5RJLZ0k4jc+QDH0ocSjvtIHxcDQ+IdR3OnmF26qIw+jD/HskD5g0IzGKVQoKcbQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\pouyan\\Documents\\Visual Studio 2019\\project\\Digikala\\Services\\Digikala.Services.Shoppingcart\\Digikala.Services.Shoppingcart.csproj",
+  "projectFilePath": "C:\\Users\\pouyan\\Documents\\Visual Studio 2019\\project\\digikalaproject\\Services\\Digikala.Services.Shoppingcart\\Digikala.Services.Shoppingcart.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pouyan\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\pouyan\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

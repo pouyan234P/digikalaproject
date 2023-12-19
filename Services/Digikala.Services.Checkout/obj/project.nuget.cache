@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "52vebNEZv9/gc07vEyq3gnD2lJFWuEmCBoopi3SdbPHn6vo6WSE7zyrtQNxl3oDj3ogQP++Nff8Cllkks4ugJw==",
+  "dgSpecHash": "FTbmqkDMirXqlWsEtMDxGwj9Io+JYe0NdSrgBe7cLxFrpnqN245pOAcpDTN6qYrgLHChtRtIBSzBVNChgckX5w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\pouyan\\Documents\\Visual Studio 2019\\project\\Digikala\\Services\\Digikala.Services.Checkout\\Digikala.Services.Checkout.csproj",
+  "projectFilePath": "C:\\Users\\pouyan\\Documents\\Visual Studio 2019\\project\\digikalaproject\\Services\\Digikala.Services.Checkout\\Digikala.Services.Checkout.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pouyan\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\pouyan\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SdZ+brXIMv81TNnKrKisqowrGc/JRh0a5eWOYhDTAfi/Ov3kX+gZazXyHtvTIzP7sdLOOSiuwKPCpZ0UPhlEog==",
+  "dgSpecHash": "Y1Om2FsjlWqWIryIDGF6v4LglXrWbcaYpvDX3OIO9OX6tvPXWjDFCpT7ArPMbq3Zd9s5+QF0OcpfbvW90CC6qA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\pouyan\\Documents\\Visual Studio 2019\\project\\Digikala\\Services\\Digikala.Services.Identity\\Digikala.Services.Identity.csproj",
+  "projectFilePath": "C:\\Users\\pouyan\\Documents\\Visual Studio 2019\\project\\digikalaproject\\Services\\Digikala.Services.Identity\\Digikala.Services.Identity.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pouyan\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\pouyan\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",

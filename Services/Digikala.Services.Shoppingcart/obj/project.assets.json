@@ -6093,11 +6093,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pouyan\\Documents\\Visual Studio 2019\\project\\Digikala\\Services\\Digikala.Services.Shoppingcart\\Digikala.Services.Shoppingcart.csproj",
+      "projectUniqueName": "C:\\Users\\pouyan\\Documents\\Visual Studio 2019\\project\\digikalaproject\\Services\\Digikala.Services.Shoppingcart\\Digikala.Services.Shoppingcart.csproj",
       "projectName": "Digikala.Services.Shoppingcart",
-      "projectPath": "C:\\Users\\pouyan\\Documents\\Visual Studio 2019\\project\\Digikala\\Services\\Digikala.Services.Shoppingcart\\Digikala.Services.Shoppingcart.csproj",
+      "projectPath": "C:\\Users\\pouyan\\Documents\\Visual Studio 2019\\project\\digikalaproject\\Services\\Digikala.Services.Shoppingcart\\Digikala.Services.Shoppingcart.csproj",
       "packagesPath": "C:\\Users\\pouyan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pouyan\\Documents\\Visual Studio 2019\\project\\Digikala\\Services\\Digikala.Services.Shoppingcart\\obj\\",
+      "outputPath": "C:\\Users\\pouyan\\Documents\\Visual Studio 2019\\project\\digikalaproject\\Services\\Digikala.Services.Shoppingcart\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\pouyan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6173,7 +6173,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.416\\RuntimeIdentifierGraph.json"
       }
     }
   }
