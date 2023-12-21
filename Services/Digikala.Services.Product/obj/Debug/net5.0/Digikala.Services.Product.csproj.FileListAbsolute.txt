@@ -65,3 +65,16 @@ C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Di
 C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Product\obj\Debug\net5.0\ref\Digikala.Services.Product.dll
 C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Product\obj\Debug\net5.0\Digikala.Services.Product.pdb
 C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Product\obj\Debug\net5.0\Digikala.Services.Product.genruntimeconfig.cache
+C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Product\bin\Debug\net5.0\AWSSDK.Core.dll
+C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Product\bin\Debug\net5.0\AWSSDK.SecurityToken.dll
+C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Product\bin\Debug\net5.0\DnsClient.dll
+C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Product\bin\Debug\net5.0\MongoDB.Bson.dll
+C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Product\bin\Debug\net5.0\MongoDB.Driver.dll
+C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Product\bin\Debug\net5.0\MongoDB.Driver.Core.dll
+C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Product\bin\Debug\net5.0\MongoDB.Libmongocrypt.dll
+C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Product\bin\Debug\net5.0\SharpCompress.dll
+C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Product\bin\Debug\net5.0\Snappier.dll
+C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Product\bin\Debug\net5.0\ZstdSharp.dll
+C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Product\bin\Debug\net5.0\runtimes\linux\native\libmongocrypt.so
+C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Product\bin\Debug\net5.0\runtimes\osx\native\libmongocrypt.dylib
+C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Product\bin\Debug\net5.0\runtimes\win\native\mongocrypt.dll

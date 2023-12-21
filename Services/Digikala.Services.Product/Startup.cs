@@ -1,4 +1,6 @@
 using Digikala.Services.Product.Data;
+using Digikala.Services.Product.Data.Repository;
+using Digikala.Services.Product.Helper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -29,6 +31,12 @@ namespace Digikala.Services.Product
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<Digikalaproduct>(x => x.UseSqlServer(Configuration.GetConnectionString("myconn")));
+            services.Configure<Mongosettings>(x =>
+            {
+                x.Connection = Configuration.GetSection("MongoSettings:Connection").Value;
+                x.DatabaseName = Configuration.GetSection("MongoSettings:DatabaseName").Value;
+            });
+            services.AddSingleton<IMongoInformationDBContext, MongoInformationDBContex>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

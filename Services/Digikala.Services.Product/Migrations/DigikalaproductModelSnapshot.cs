@@ -77,8 +77,8 @@ namespace Digikala.Services.Product.Migrations
                     b.Property<string>("Color")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Informationid")
-                        .HasColumnType("int");
+                    b.Property<string>("Informationid")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Insurance")
                         .HasColumnType("nvarchar(max)");
