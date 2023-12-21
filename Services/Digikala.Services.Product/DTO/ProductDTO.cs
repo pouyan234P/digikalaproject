@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Digikala.Services.Product.Models
+namespace Digikala.Services.Product.DTO
 {
-    public class Products
+    public class ProductDTO
     {
         public int id { get; set; }
         public string Informationid { get; set; }
-        public Category Categoryid { get; set; }
+        public CategoryDTO Categoryid { get; set; }
         public string Name { get; set; }
         public string Insurance { get; set; }
         public double Price { get; set; }

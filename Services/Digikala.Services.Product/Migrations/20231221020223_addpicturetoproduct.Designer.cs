@@ -4,14 +4,16 @@ using Digikala.Services.Product.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Digikala.Services.Product.Migrations
 {
     [DbContext(typeof(Digikalaproduct))]
-    partial class DigikalaproductModelSnapshot : ModelSnapshot
+    [Migration("20231221020223_addpicturetoproduct")]
+    partial class addpicturetoproduct
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
