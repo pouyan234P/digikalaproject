@@ -27,20 +27,20 @@ namespace Digikala.Services.Product.Data.Repository
             return myproduct;
         }
 
-        public async Task<IEnumerable<Products>> GetProductsbyCategory(int categoryid)
+        public async Task<IEnumerable<Products>> GetProductsbyCategory(string name)
         {
             var query = from c in _db.categories
-                        join p in _db.products on c.ID equals p.Categoryid.ID
-                        where c.ID == categoryid
+                        join p in _db.products on c.ID equals p.Categoryid.CategoryParent
+                        where c.CategoryName == name
                         select p;
 
-            var products = await query.ToListAsync();
+            var products = await query.Include(x=>x.Categoryid).ToListAsync();
             return products;
         }
 
         public async Task<Products> GetProductsbyid(int id)
         {
-            var myproduct = await _db.products.Where(x => x.id == id).Select(x => x).FirstOrDefaultAsync();
+            var myproduct = await _db.products.Where(x => x.id == id).Select(x => x).Include(x=>x.Categoryid).FirstOrDefaultAsync();
             return myproduct;
         }
     }

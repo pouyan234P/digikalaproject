@@ -12,5 +12,6 @@ namespace Digikala.Services.Product.Data.Repository
     {
       public Task<BsonDocument> Create(BsonDocument data);
       public Task<BsonDocument> Getlastdata();
+        public Task<BsonDocument> GetInformation(string id);
     }
 }

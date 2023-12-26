@@ -1,4 +1,5 @@
-﻿using CloudinaryDotNet;
+﻿using AutoMapper;
+using CloudinaryDotNet;
 using CloudinaryDotNet.Actions;
 using Digikala.Services.Product.Data.Repository;
 using Digikala.Services.Product.DTO;
@@ -27,13 +28,15 @@ namespace Digikala.Services.Product.Controllers
         private readonly IMongoInformationDBContext _informationdb;
         private readonly IOptions<CloudinarySetting> _cloudinaryconfig;
         private readonly ICategoryRepository _categoryRepository;
+        private readonly IMapper _mapper;
         private Cloudinary _cloudinary;
-        public ProductsController(IProductRepository productRepository,IMongoInformationDBContext informationdb, IOptions<CloudinarySetting> cloudinaryconfig,ICategoryRepository categoryRepository)
+        public ProductsController(IProductRepository productRepository,IMongoInformationDBContext informationdb, IOptions<CloudinarySetting> cloudinaryconfig,ICategoryRepository categoryRepository,IMapper mapper)
         {
             _productRepository = productRepository;
             _informationdb = informationdb;
             _cloudinaryconfig = cloudinaryconfig;
             _categoryRepository = categoryRepository;
+            _mapper = mapper;
             Account acc = new Account(_cloudinaryconfig.Value.CloudName, _cloudinaryconfig.Value.ApiKey, _cloudinaryconfig.Value.ApiSecret);
             _cloudinary = new Cloudinary(acc);
         }
@@ -102,6 +105,22 @@ namespace Digikala.Services.Product.Controllers
             };
              _productRepository.addProduct(product);
             return Ok();
+        }
+        [HttpGet("Getproduct/{id}")]
+        public async Task<IActionResult> Getproduct(int id)
+        {
+            var myproduct = await _productRepository.GetProductsbyid(id);
+            var myinfo = await _informationdb.GetInformation(myproduct.Informationid);
+            var myproductdto = _mapper.Map<ProductDTO>(myproduct);
+            myproductdto.Informationid = myinfo.ToJson();
+            return Ok(myproductdto);
+        }
+        [HttpGet("SearchbyCategory/{name}")]
+        public async Task<IActionResult> SearchbyCategory(string name)
+        {
+            var product = await _productRepository.GetProductsbyCategory(name);
+            var productdto = _mapper.Map<IEnumerable<ProductDTO>>(product);
+            return Ok(productdto);
         }
     }
 }

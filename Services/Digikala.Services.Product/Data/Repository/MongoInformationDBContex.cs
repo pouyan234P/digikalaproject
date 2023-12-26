@@ -39,5 +39,13 @@ namespace Digikala.Services.Product.Data.Repository
             var lastData =await  collection.Find(filter).FirstOrDefaultAsync();
             return lastData;
         }
+
+        public async Task<BsonDocument> GetInformation(string id)
+        {
+            var collection = _db.GetCollection<BsonDocument>("myNewCollection");
+            var filter = new BsonDocument("_id", ObjectId.Parse(id));
+            var myinfo = await collection.Find(filter).FirstOrDefaultAsync();
+            return myinfo;
+        }
     }
 }
