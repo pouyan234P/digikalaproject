@@ -9,7 +9,7 @@ namespace Digikala.Services.Product.Data.Repository
    public interface ICategoryRepository
     {
         void addCategory(Category category);
-        Task<Category> GetCategory(int categoryid);
+        Task<Category> GetCategory(int? categoryid);
         Task<IEnumerable<Category>> GetCategories();
         Task<Category> Getcategoryidbyname(string name);
     }

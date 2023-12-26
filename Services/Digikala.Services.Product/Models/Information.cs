@@ -10,16 +10,12 @@ namespace Digikala.Services.Product.Models
 {
     public class Information
     {
-        public readonly dynamic _data;
-
-        public Information(dynamic data)
+        public object _data { get; set; }
+        public Information(object mydata)
         {
-            _data = data;
+            _data = mydata;
         }
-        public Information()
-        {
-
-        }
+    
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }

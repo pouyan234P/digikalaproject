@@ -3,10 +3,11 @@ using Digikala.Services.Product.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Bson;
-using Newtonsoft.Json;
+using Newtonsoft.Json.Bson;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Digikala.Services.Product.Controllers
@@ -26,7 +27,15 @@ namespace Digikala.Services.Product.Controllers
         {
             var bsonDocument = BsonDocument.Parse(jsonData.ToString());
             var data =await _mongoInformationDBContext.Create(bsonDocument);
-            return Ok(data);
+            var id = data["_id"];
+            return Ok(data.ToString());
+        }
+        [HttpGet("GetInformation")]
+        public async Task<IActionResult> GetInformation()
+        {
+            var myinfo = await _mongoInformationDBContext.Getlastdata();
+            
+            return Ok(myinfo.ToString());
         }
     }
 }

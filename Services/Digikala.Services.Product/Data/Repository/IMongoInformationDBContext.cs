@@ -11,5 +11,6 @@ namespace Digikala.Services.Product.Data.Repository
    public interface IMongoInformationDBContext
     {
       public Task<BsonDocument> Create(BsonDocument data);
+      public Task<BsonDocument> Getlastdata();
     }
 }

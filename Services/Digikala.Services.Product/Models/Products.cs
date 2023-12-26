@@ -14,8 +14,10 @@ namespace Digikala.Services.Product.Models
         public string Insurance { get; set; }
         public double Price { get; set; }
         public string Color { get; set; }
-        public byte mainpicture { get; set; }
+        public string mainpicture { get; set; }
+        public string mainpictureUrlID { get; set; }
         public byte[] pictures { get; set; }
+        public byte[] PictureUrlID { get; set; }
         public string Nameforushghah { get; set; }
     }
 }

@@ -37,6 +37,9 @@ namespace Digikala.Services.Product
                 x.DatabaseName = Configuration.GetSection("MongoSettings:DatabaseName").Value;
             });
             services.AddSingleton<IMongoInformationDBContext, MongoInformationDBContex>();
+            services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.Configure<CloudinarySetting>(Configuration.GetSection("CloudinarySetting"));
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

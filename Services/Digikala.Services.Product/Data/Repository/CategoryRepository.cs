@@ -28,7 +28,7 @@ namespace Digikala.Services.Product.Data.Repository
             return mycategories;
         }
 
-        public async Task<Category> GetCategory(int categoryid)
+        public async Task<Category> GetCategory(int? categoryid)
         {
             var mycategory = await _db.categories.Where(x => x.ID == categoryid).Select(x => x).FirstOrDefaultAsync();
             return mycategory;

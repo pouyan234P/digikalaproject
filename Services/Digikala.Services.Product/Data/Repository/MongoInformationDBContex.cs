@@ -28,10 +28,16 @@ namespace Digikala.Services.Product.Data.Repository
         public async Task<BsonDocument> Create(BsonDocument data)
         {
             var collection = _db.GetCollection<BsonDocument>("myNewCollection");
-            await collection.InsertOneAsync(data);
+             await collection.InsertOneAsync(data);
             return await collection.Find(data).FirstOrDefaultAsync();
         }
 
-      
+        public async Task<BsonDocument> Getlastdata()
+        {
+            var collection = _db.GetCollection<BsonDocument>("myNewCollection");
+            var filter = new BsonDocument("_id", ObjectId.Parse("65873a4228110df09f5404b7"));
+            var lastData =await  collection.Find(filter).FirstOrDefaultAsync();
+            return lastData;
+        }
     }
 }
