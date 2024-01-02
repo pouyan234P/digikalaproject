@@ -8,7 +8,6 @@ namespace Digikala.Services.Product.Models
     public class Pointofview
     {
         public int id { get; set; }
-        public Products Productid { get; set; }
         public string Commenttext { get; set; }
         public string Commenttitle { get; set; }
         public double Score { get; set; }

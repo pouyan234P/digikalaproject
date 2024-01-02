@@ -9,6 +9,7 @@ namespace Digikala.Services.Product.Models
     {
         public int id { get; set; }
         public string Informationid { get; set; }
+        public int myCategoryId { get; set; }
         public Category Categoryid { get; set; }
         public string Name { get; set; }
         public string Insurance { get; set; }

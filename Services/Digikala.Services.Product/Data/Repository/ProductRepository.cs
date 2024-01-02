@@ -29,13 +29,19 @@ namespace Digikala.Services.Product.Data.Repository
 
         public async Task<IEnumerable<Products>> GetProductsbyCategory(string name)
         {
-            var query = from c in _db.categories
-                        join p in _db.products on c.ID equals p.Categoryid.CategoryParent
-                        where c.CategoryName == name
-                        select p;
 
-            var products = await query.Include(x=>x.Categoryid).ToListAsync();
+            var categoryAndSubcategories =await _db.categories
+         .Include(c => c.Subcategories)
+         .Where(c => c.CategoryName == name)
+         .ToListAsync();
+
+            var productQuery = categoryAndSubcategories
+                .SelectMany(c => c.Products);
+
+            var products = productQuery.ToList();
             return products;
+           
+           
         }
 
         public async Task<Products> GetProductsbyid(int id)

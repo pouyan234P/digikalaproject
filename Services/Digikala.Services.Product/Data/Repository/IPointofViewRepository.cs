@@ -8,8 +8,8 @@ namespace Digikala.Services.Product.Data.Repository
 {
     public interface IPointofViewRepository
     {
-        public void addpointofview(Pointofview pointofview);
-        public Task<IEnumerable<Pointofview>> GetPointofviewsbyproduct(int productid);
+        public void addpointofview(UserPoint userPoint);
+        public Task<IEnumerable<UserPoint>> GetPointofviewsbyproduct(int productid);
         public Task<Pointofview> GetPointofviewbyid(int id);
     }
 }

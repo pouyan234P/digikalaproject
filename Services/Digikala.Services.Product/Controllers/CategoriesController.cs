@@ -31,7 +31,6 @@ namespace Digikala.Services.Product.Controllers
                 {
                     var mycategory = new Category
                     {
-
                         CategoryName = categoryDTO.CategoryName,
                         CategoryParent = getparentid.ID
                     };
@@ -45,12 +44,11 @@ namespace Digikala.Services.Product.Controllers
 
             else
             {
-                
+                Category parentCategory = null;
                 var mycategory = new Category
                 {
-
                     CategoryName = categoryDTO.CategoryName,
-                    CategoryParent = 0
+                    ParentCategory = parentCategory
                 };
                 _categoryRepository.addCategory(mycategory);
             }

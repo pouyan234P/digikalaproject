@@ -15,9 +15,12 @@ namespace Digikala.Services.Product.Data.Repository
         {
             _db = db;
         }
-        public async void addpointofview(Pointofview pointofview)
+        public async void addpointofview(UserPoint userPoint)
         {
-            await _db.pointofviews.AddAsync(pointofview);
+            await _db.pointofviews.AddAsync(userPoint.Pointofiviewid);
+            var mypointofview = await _db.pointofviews.Select(x => x).LastOrDefaultAsync();
+            userPoint.Pointofiviewid = mypointofview;
+            await _db.userPoints.AddAsync(userPoint);
             _db.SaveChanges();
         }
 
@@ -27,9 +30,9 @@ namespace Digikala.Services.Product.Data.Repository
             return mypointofview;
         }
 
-        public async Task<IEnumerable<Pointofview>> GetPointofviewsbyproduct(int productid)
+        public async Task<IEnumerable<UserPoint>> GetPointofviewsbyproduct(int productid)
         {
-            var mypointofview = await _db.pointofviews.Where(x => x.Productid.id == productid).Select(x => x).ToListAsync();
+            var mypointofview = await _db.userPoints.Where(x => x.Productid.id == productid).Select(x => x).ToListAsync();
             return mypointofview;
         }
     }
