@@ -9,5 +9,6 @@ namespace Digikala.Services.Product.DTO
     {
         public int ID { get; set; }
         public string CategoryName { get; set; }
+        public int catparentid { get; set; }
     }
 }

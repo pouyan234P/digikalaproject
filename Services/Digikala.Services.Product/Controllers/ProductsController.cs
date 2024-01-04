@@ -21,9 +21,9 @@ namespace Digikala.Services.Product.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
-        public static ImageUploadResult myuploadresult1 { get; set; }
-        public static byte[] Myurl { get; set; }
-        public static byte[] MyurlID { get; set; }
+        public static ImageUploadResult? myuploadresult1 { get; set; }
+        public static byte[]? Myurl { get; set; }
+        public static byte[]? MyurlID { get; set; }
         private readonly IProductRepository _productRepository;
         private readonly IMongoInformationDBContext _informationdb;
         private readonly IOptions<CloudinarySetting> _cloudinaryconfig;
@@ -91,17 +91,17 @@ namespace Digikala.Services.Product.Controllers
             var mycategory = await _categoryRepository.GetCategory(setProductDTO.Categoryid.ID);
             var product = new Products
             {
-                mainpictureUrlID = myuploadresult1.Uri.ToString(),
-                mainpicture= myuploadresult1.PublicId,
-                PictureUrlID= MyurlID,
-                pictures= Myurl,
-                Color=setProductDTO.Color,
-                Informationid=id.ToString(),
-                Insurance=setProductDTO.Insurance,
-                Name=setProductDTO.Name,
-                Nameforushghah=setProductDTO.Nameforushghah,
-                Price=setProductDTO.Price,
-                Categoryid= mycategory
+               /* mainpictureUrlID = myuploadresult1.Uri.ToString(),
+                mainpicture = myuploadresult1.PublicId,
+                PictureUrlID = MyurlID,
+                pictures = Myurl,*/
+                Color = setProductDTO.Color,
+                Informationid = id.ToString(),
+                Insurance = setProductDTO.Insurance,
+                Name = setProductDTO.Name,
+                Nameforushghah = setProductDTO.Nameforushghah,
+                Price = setProductDTO.Price,
+                Categoryid = mycategory
             };
              _productRepository.addProduct(product);
             return Ok();
@@ -109,6 +109,7 @@ namespace Digikala.Services.Product.Controllers
         [HttpGet("Getproduct/{id}")]
         public async Task<IActionResult> Getproduct(int id)
         {
+            
             var myproduct = await _productRepository.GetProductsbyid(id);
             var myinfo = await _informationdb.GetInformation(myproduct.Informationid);
             var myproductdto = _mapper.Map<ProductDTO>(myproduct);
@@ -118,8 +119,20 @@ namespace Digikala.Services.Product.Controllers
         [HttpGet("SearchbyCategory/{name}")]
         public async Task<IActionResult> SearchbyCategory(string name)
         {
+            var mylist = new List<dynamic>();
             var product = await _productRepository.GetProductsbyCategory(name);
+            foreach (var item in product)
+            {
+                var myinfo = await _informationdb.GetInformation(item.Informationid);
+                mylist.Add(myinfo.ToJson().Normalize());
+            }
             var productdto = _mapper.Map<IEnumerable<ProductDTO>>(product);
+            int count = 0;
+            foreach(var item in productdto)
+            {
+                item.Informationid = mylist[count];
+                count++;
+            }
             return Ok(productdto);
         }
     }

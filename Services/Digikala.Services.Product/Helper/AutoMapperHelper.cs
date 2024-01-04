@@ -13,7 +13,7 @@ namespace Digikala.Services.Product.Helper
     {
         public AutoMapperHelper()
         {
-            CreateMap<Products, ProductDTO>().AfterMap<Convertfrombsondocumenttostring>().ForMember(d => d.Categoryid,
+            CreateMap<Products, ProductDTO>().ForMember(d => d.Categoryid,
                 mapper => mapper.MapFrom(c => c.Categoryid.ID));
         }
     }
@@ -22,8 +22,8 @@ namespace Digikala.Services.Product.Helper
         public void Process(Products source, ProductDTO destination, ResolutionContext context)
         {
             byte[] bytes = source.pictures;
-            string oneBigString = Encoding.ASCII.GetString(bytes);
-            string[] lines = oneBigString.Split('\n');
+            var oneBigString = Encoding.ASCII.GetString(bytes);
+            string?[] lines = oneBigString.Split('\n');
             destination.pictures = lines;
            
 

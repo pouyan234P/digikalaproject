@@ -9,9 +9,7 @@ namespace Digikala.Services.Product.Models
     {
         public int ID { get; set; }
         public string CategoryName { get; set; }
-        public int? CategoryParent { get; set; }
-        public List<Products> Products { get; set; }
-        public Category ParentCategory { get; set; }
-        public List<Category> Subcategories { get; set; }
+        public int CategoryParent { get; set; }
+   
     }
 }

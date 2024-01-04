@@ -18,17 +18,6 @@ namespace Digikala.Services.Product.Data
         public DbSet<Pointofview> pointofviews { get; set; }
         public DbSet<Questionandanswer> questionandanswers { get; set; }
         public DbSet<UserPoint> userPoints { get; set; }
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Category>()
-                .HasMany(c => c.Subcategories)
-                .WithOne(c => c.ParentCategory)
-                .HasForeignKey(c => c.CategoryParent);
-
-            modelBuilder.Entity<Category>()
-                .HasMany(c => c.Products)
-                .WithOne(p => p.Categoryid)
-                .HasForeignKey(p => p.myCategoryId);
-        }
+   
     }
 }

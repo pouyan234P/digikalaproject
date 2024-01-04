@@ -27,7 +27,7 @@ namespace Digikala.Services.Product.Controllers
             var getparentid = await _categoryRepository.GetCategory(categoryDTO.ID);
             if (getparent != null || getparentid!=null)
             {
-                if ((getparent == null & getparentid != null) ||(getparent!=null &getparentid==null))
+                if ((getparent == null & getparentid.CategoryParent != null) ||(getparent!=null &getparentid.CategoryParent==null))
                 {
                     var mycategory = new Category
                     {
@@ -44,11 +44,10 @@ namespace Digikala.Services.Product.Controllers
 
             else
             {
-                Category parentCategory = null;
                 var mycategory = new Category
                 {
                     CategoryName = categoryDTO.CategoryName,
-                    ParentCategory = parentCategory
+                    CategoryParent = categoryDTO.catparentid
                 };
                 _categoryRepository.addCategory(mycategory);
             }
