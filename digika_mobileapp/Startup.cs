@@ -1,3 +1,5 @@
+using digika_mobileapp.Services;
+using digika_mobileapp.Services.IServices;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,6 +30,9 @@ namespace digika_mobileapp
         {
 
             services.AddControllers();
+            services.AddHttpClient<IProductService, ProductService>();
+            SD.ProductApiBase = Configuration["ServiceUrls:ProductApi"];
+            services.AddScoped<IProductService, ProductService>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "digika_mobileapp", Version = "v1" });

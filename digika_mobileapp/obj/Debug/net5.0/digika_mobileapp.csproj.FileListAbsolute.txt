@@ -56,3 +56,4 @@ C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\digika_mobi
 C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\digika_mobileapp\obj\Debug\net5.0\ref\digika_mobileapp.dll
 C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\digika_mobileapp\obj\Debug\net5.0\digika_mobileapp.pdb
 C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\digika_mobileapp\obj\Debug\net5.0\digika_mobileapp.genruntimeconfig.cache
+C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\digika_mobileapp\bin\Debug\net5.0\Newtonsoft.Json.dll

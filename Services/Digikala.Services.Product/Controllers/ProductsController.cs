@@ -21,6 +21,7 @@ namespace Digikala.Services.Product.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
+        protected ResponseDTO _response;
         public static ImageUploadResult? myuploadresult1 { get; set; }
         public static byte[]? Myurl { get; set; }
         public static byte[]? MyurlID { get; set; }
@@ -39,9 +40,9 @@ namespace Digikala.Services.Product.Controllers
             _mapper = mapper;
             Account acc = new Account(_cloudinaryconfig.Value.CloudName, _cloudinaryconfig.Value.ApiKey, _cloudinaryconfig.Value.ApiSecret);
             _cloudinary = new Cloudinary(acc);
+            this._response = new ResponseDTO();
         }
-        [HttpPost("SetPicture")]
-        public  IActionResult SetPicture([FromForm]IList<IFormFile> mypicture,IFormFile mainpicture)
+        public  void SetPicture(IList<IFormFile> mypicture,IFormFile mainpicture)
         {
             var file1 = mainpicture;
             myuploadresult1 = new ImageUploadResult();
@@ -78,11 +79,12 @@ namespace Digikala.Services.Product.Controllers
             }
             Myurl = Encoding.UTF8.GetBytes(sb.ToString());
             MyurlID = Encoding.UTF8.GetBytes(publicID.ToString());
-            return Ok();
+          
         }
         [HttpPost("addProduct")]
         public async Task<IActionResult> addProduct([FromBody]SetProductDTO setProductDTO)
         {
+            SetPicture(setProductDTO.PictureUrl, setProductDTO.MainPictureUrl);
             var bsonDocument = BsonDocument.Parse(setProductDTO.information.ToString());
             var data = await _informationdb.Create(bsonDocument);
             var id = data["_id"];
@@ -91,10 +93,10 @@ namespace Digikala.Services.Product.Controllers
             var mycategory = await _categoryRepository.GetCategory(setProductDTO.Categoryid.ID);
             var product = new Products
             {
-               /* mainpictureUrlID = myuploadresult1.Uri.ToString(),
+                mainpictureUrlID = myuploadresult1.Uri.ToString(),
                 mainpicture = myuploadresult1.PublicId,
                 PictureUrlID = MyurlID,
-                pictures = Myurl,*/
+                pictures = Myurl,
                 Color = setProductDTO.Color,
                 Informationid = id.ToString(),
                 Insurance = setProductDTO.Insurance,
@@ -109,31 +111,48 @@ namespace Digikala.Services.Product.Controllers
         [HttpGet("Getproduct/{id}")]
         public async Task<IActionResult> Getproduct(int id)
         {
-            
-            var myproduct = await _productRepository.GetProductsbyid(id);
-            var myinfo = await _informationdb.GetInformation(myproduct.Informationid);
-            var myproductdto = _mapper.Map<ProductDTO>(myproduct);
-            myproductdto.Informationid = myinfo.ToJson();
-            return Ok(myproductdto);
+            try
+            {
+                var myproduct = await _productRepository.GetProductsbyid(id);
+                var myinfo = await _informationdb.GetInformation(myproduct.Informationid);
+                var myproductdto = _mapper.Map<ProductDTO>(myproduct);
+                myproductdto.Informationid = myinfo.ToString();
+                _response.Result = myproductdto;
+            }
+            catch(Exception e)
+            {
+                _response.IsSuccess = false;
+                _response.ErrorMessages = new List<string>() { e.ToString() };
+            }
+            return Ok(_response);
         }
         [HttpGet("SearchbyCategory/{name}")]
         public async Task<IActionResult> SearchbyCategory(string name)
         {
-            var mylist = new List<dynamic>();
-            var product = await _productRepository.GetProductsbyCategory(name);
-            foreach (var item in product)
+            try
             {
-                var myinfo = await _informationdb.GetInformation(item.Informationid);
-                mylist.Add(myinfo.ToJson().Normalize());
+                var mylist = new List<dynamic>();
+                var product = await _productRepository.GetProductsbyCategory(name);
+                foreach (var item in product)
+                {
+                    var myinfo = await _informationdb.GetInformation(item.Informationid);
+                    mylist.Add(myinfo.ToJson().Normalize());
+                }
+                var productdto = _mapper.Map<IEnumerable<ProductDTO>>(product);
+                int count = 0;
+                foreach (var item in productdto)
+                {
+                    item.Informationid = mylist[count];
+                    count++;
+                }
+                _response.Result = productdto;
             }
-            var productdto = _mapper.Map<IEnumerable<ProductDTO>>(product);
-            int count = 0;
-            foreach(var item in productdto)
+            catch(Exception e)
             {
-                item.Informationid = mylist[count];
-                count++;
+                _response.IsSuccess = false;
+                _response.ErrorMessages = new List<string>() { e.ToString() };
             }
-            return Ok(productdto);
+            return Ok(_response);
         }
     }
 }
