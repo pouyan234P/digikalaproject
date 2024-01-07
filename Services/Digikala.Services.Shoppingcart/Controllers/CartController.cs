@@ -55,6 +55,7 @@ namespace Digikala.Services.Shoppingcart.Controllers
                     productid = dataproduct
                 };
                 var datacartdetail = await _cartdetailRepository.AddCartdetail(mycartdetail);
+                _response.Result = datacartdetail;
             }
             catch (Exception e)
             {

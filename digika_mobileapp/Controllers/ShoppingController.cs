@@ -24,10 +24,12 @@ namespace digika_mobileapp.Controllers
         [HttpPost("Addcart")]
         public async Task<IActionResult> Addcart([FromBody]CartDetailDTO cartDetailDTO)
         {
+            CartDetailDTO list = new();
           var response=  await _shoppingService.AddShoppingcart<ResponseDTO>(cartDetailDTO);
-            if(response.IsSuccess)
+            if(response.IsSuccess && response!=null )
             {
-                return Ok(true);
+                list = JsonConvert.DeserializeObject<CartDetailDTO>(Convert.ToString(response.Result));
+                return Ok(list);
             }
             return Ok(response.DisplayMessage);
         }

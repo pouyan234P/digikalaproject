@@ -11,6 +11,6 @@ namespace digika_mobileapp.Models.Shoppingmodel
         public int productid { get; set; }
         public string Name { get; set; }
         public double Price { get; set; }
-        public byte[] Picture { get; set; }
+        public string Picture { get; set; }
     }
 }
