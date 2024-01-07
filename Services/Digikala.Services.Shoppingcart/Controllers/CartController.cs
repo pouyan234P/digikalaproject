@@ -15,6 +15,7 @@ namespace Digikala.Services.Shoppingcart.Controllers
     [ApiController]
     public class CartController : ControllerBase
     {
+        protected ResponseDTO _response;
         private readonly IProductRepository _productRepository;
         private readonly ICartdetailRepository _cartdetailRepository;
         private readonly ICartheaderRepository _cartheader;
@@ -26,45 +27,73 @@ namespace Digikala.Services.Shoppingcart.Controllers
             _cartdetailRepository = cartdetailRepository;
             _cartheader = cartheader;
             _mapper = mapper;
+            _response = new();
         }
         [HttpPost("AddShoppingcart")]
-        public async Task<IActionResult> AddShoppingcart([FromBody]CartDetailDTO cartDetailDTO)
+        public async Task<IActionResult> AddShoppingcart([FromBody] CartDetailDTO cartDetailDTO)
         {
-            var myproduct = new Product
+            try
             {
-                Name = cartDetailDTO.productid.Name,
-                Picture = cartDetailDTO.productid.Picture,
-                Price = cartDetailDTO.productid.Price
-            };
-            var dataproduct = await _productRepository.Addproduct(myproduct);
-            var mycartheader = new CartHeader
+                var myproduct = new Product
+                {
+                    Name = cartDetailDTO.productid.Name,
+                    Picture = cartDetailDTO.productid.Picture,
+                    Price = cartDetailDTO.productid.Price,
+                    productid=cartDetailDTO.productid.productid
+                };
+                var dataproduct = await _productRepository.Addproduct(myproduct);
+                var mycartheader = new CartHeader
+                {
+                    digicouponId = cartDetailDTO.Headerid.digicouponId,
+                    Userid = cartDetailDTO.Headerid.Userid
+                };
+                var datacartheader = await _cartheader.AddCartheader(mycartheader);
+                var mycartdetail = new Cartdetail
+                {
+                    Count = cartDetailDTO.Count,
+                    Headerid = datacartheader,
+                    productid = dataproduct
+                };
+                var datacartdetail = await _cartdetailRepository.AddCartdetail(mycartdetail);
+            }
+            catch (Exception e)
             {
-                digicouponId = cartDetailDTO.Headerid.digicouponId,
-                Userid = cartDetailDTO.Headerid.Userid
-            };
-            var datacartheader=await _cartheader.AddCartheader(mycartheader);
-            var mycartdetail = new Cartdetail
-            {
-                Count = cartDetailDTO.Count,
-                Headerid = datacartheader,
-                productid = dataproduct
-            };
-            var datacartdetail = await _cartdetailRepository.AddCartdetail(mycartdetail);
-            return Ok(datacartdetail);
+                _response.IsSuccess = false;
+                _response.ErrorMessages = new List<string>() { e.ToString() };
+            }
+            return Ok(_response);
         }
         [HttpGet("GetAllShoppingcart/{userid}")]
         public async Task<IActionResult> GetAllShoppingcart(int userid)
         {
-            var myshop = await _cartdetailRepository.GetAllCartdetail(userid);
-            var myshopdto = _mapper.Map<IEnumerable<CartDetailDTO>>(myshop);
-            return Ok(myshopdto);
+            try
+            {
+                var myshop = await _cartdetailRepository.GetAllCartdetail(userid);
+                var myshopdto = _mapper.Map<IEnumerable<CartDetailDTO>>(myshop);
+                _response.Result = myshopdto;
+            }
+            catch(Exception e)
+            {
+                _response.IsSuccess = false;
+                _response.ErrorMessages = new List<string>() { e.ToString() };
+            }
+            return Ok(_response);
         }
         [HttpGet("GetShoppingcart/{detailid}")]
         public async Task<IActionResult> GetShoppingcart(int detailid)
         {
-            var myshop = await _cartdetailRepository.GetCartdetail(detailid);
-            var myshopdto = _mapper.Map<CartDetailDTO>(myshop);
-            return Ok(myshopdto);
+            try
+            {
+                var myshop = await _cartdetailRepository.GetCartdetail(detailid);
+                var myshopdto = _mapper.Map<CartDetailDTO>(myshop);
+                _response.Result = myshopdto;
+            }
+            catch(Exception e)
+            {
+                _response.IsSuccess = false;
+                _response.ErrorMessages = new List<string>() { e.ToString() };
+            }
+            return Ok(_response);
         }
 
     }

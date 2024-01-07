@@ -33,6 +33,9 @@ namespace digika_mobileapp
             services.AddHttpClient<IProductService, ProductService>();
             SD.ProductApiBase = Configuration["ServiceUrls:ProductApi"];
             services.AddScoped<IProductService, ProductService>();
+            services.AddHttpClient<IShoppingService,ShoppingService>();
+            SD.ShoppingApiBase = Configuration["ServiceUrls:ShoppingApi"];
+            services.AddScoped<IShoppingService, ShoppingService>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "digika_mobileapp", Version = "v1" });

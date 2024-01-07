@@ -1,4 +1,6 @@
-﻿using digika_mobileapp.Models;
+﻿
+using digika_mobileapp.Models;
+using digika_mobileapp.Models.Productmodel;
 using digika_mobileapp.Services.IServices;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -16,8 +18,8 @@ namespace digika_mobileapp.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
-        public static IList<IFormFile> mypicture { get; set; }
-        public static IFormFile mainpicture { get; set; }
+        public static IList<IFormFile> mypicture;
+        public static IFormFile mainpicture;
         private readonly IProductService _productService;
 
         public ProductController(IProductService productService)
@@ -48,17 +50,21 @@ namespace digika_mobileapp.Controllers
             return Ok(list);
         }
         [HttpPost("Picture")]
-        public IActionResult Picture([FromForm]IList<IFormFile> picture,IFormFile main)
+        public async Task<IActionResult> Picture([FromForm]IList<IFormFile> picture,IFormFile main)
         {
-            mypicture = picture;
-            mainpicture = main;
-            return Ok();
+            var response = await _productService.SendpictureAsync<ResponseDTO>(main);
+            var response2 = await _productService.SendseconpictureAsync<ResponseDTO>(picture);
+            if(response.IsSuccess && response2.IsSuccess)
+            {
+                return Ok(true);
+            }
+            return Ok(response.ErrorMessages);
         }
         [HttpPost("Addproduct")]
         public async Task<IActionResult> Addproduct([FromBody]SetProductDTO setProductDTO)
         {
-            setProductDTO.MainPictureUrl = mainpicture;
-            setProductDTO.PictureUrl = mypicture;
+            /*setProductDTO.MainPictureUrl = mainpicture;
+            setProductDTO.PictureUrl = mypicture;*/
             var response = await _productService.CreateProductAsync<ResponseDTO>(setProductDTO);
             if(response.IsSuccess)
             {

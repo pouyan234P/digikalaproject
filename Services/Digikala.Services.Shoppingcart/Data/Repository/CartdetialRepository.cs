@@ -19,13 +19,13 @@ namespace Digikala.Services.Shoppingcart.Data.Repository
         {
             await _db.cartdetails.AddAsync(cartdetail);
             _db.SaveChanges();
-            var mycartdetail = await _db.cartdetails.Select(x => x).LastOrDefaultAsync();
+            var mycartdetail = await _db.cartdetails.OrderBy(x=>x).LastOrDefaultAsync();
             return mycartdetail;
         }
 
         public async Task<IEnumerable<Cartdetail>> GetAllCartdetail(int Userid)
         {
-            var mycartdetail = await _db.cartdetails.Where(x => x.Headerid.Userid == Userid).Select(x => x).Include(x=>x.productid).ToListAsync();
+            var mycartdetail = await _db.cartdetails.Where(x => x.Headerid.Userid == Userid).Include(x=>x.productid).Include(x=>x.Headerid).ToListAsync();
             return mycartdetail;
         }
 

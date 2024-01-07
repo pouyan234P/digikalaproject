@@ -1,10 +1,12 @@
 ﻿using digika_mobileapp.Models;
 using digika_mobileapp.Services.IServices;
+using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -29,9 +31,52 @@ namespace digika_mobileapp.Services
                 message.Headers.Add("Accept", "application/json");
                 message.RequestUri = new Uri(apiRequest.Url);
                 client.DefaultRequestHeaders.Clear();
-                if(apiRequest.Data!=null)
+                if (apiRequest.Data == null)
                 {
-                    message.Content = new StringContent(JsonConvert.SerializeObject(apiRequest.Data), Encoding.UTF8, "application/json");
+                    if (apiRequest.ApiType == SD.ApiType.POST || apiRequest.ApiType == SD.ApiType.PUT)
+                    {
+                        // Check if the request has a file to upload
+                        if (apiRequest.file != null)
+                        {
+                            var formData = new MultipartFormDataContent();
+                            formData.Add(new StringContent(JsonConvert.SerializeObject(apiRequest.Data)), "jsonData");
+
+                            var fileContent = new StreamContent(apiRequest.file.OpenReadStream());
+                            fileContent.Headers.ContentDisposition = new System.Net.Http.Headers.ContentDispositionHeaderValue("form-data")
+                            {
+                                Name = "mainpicture",
+                                FileName = apiRequest.file.FileName
+                            };
+
+                            formData.Add(fileContent, "mainpicture", apiRequest.file.FileName);
+                            message.Content = formData;
+                        }
+                        if (apiRequest.Ifile != null)
+                        {
+                            var formData = new MultipartFormDataContent();
+                            foreach (var file in apiRequest.Ifile)
+                            {
+                                var fileContent1 = new StreamContent(file.OpenReadStream());
+                                fileContent1.Headers.ContentDisposition = new System.Net.Http.Headers.ContentDispositionHeaderValue("form-data")
+                                {
+                                    Name = "mypicture", // Use a different name for each file in the list
+                                    FileName = file.FileName
+                                };
+
+                                formData.Add(fileContent1, "mypicture", file.FileName);
+                                message.Content = formData;
+                            }
+                        }
+                            
+                            
+                        }
+                    }
+                
+                else
+                {
+                    // Convert other data types to StringContent
+                    var stringContent = new StringContent(JsonConvert.SerializeObject(apiRequest.Data), Encoding.UTF8, "application/json");
+                    message.Content = stringContent;
                 }
                 HttpResponseMessage apiresponse = null;
                 switch(apiRequest.ApiType)

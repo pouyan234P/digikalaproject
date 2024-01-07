@@ -17,10 +17,16 @@ namespace Digikala.Services.Shoppingcart.Data.Repository
         }
         public async Task<CartHeader> AddCartheader(CartHeader cartHeader)
         {
-            await _db.cartHeaders.AddAsync(cartHeader);
-            _db.SaveChanges();
-            var mycartheader = await _db.cartHeaders.Select(x => x).LastOrDefaultAsync();
-            return mycartheader;
+            var mycart = await _db.cartHeaders.Where(x => x.Userid == cartHeader.Userid).Select(x => x).FirstOrDefaultAsync();
+            if (mycart == null)
+            {
+                await _db.cartHeaders.AddAsync(cartHeader);
+                _db.SaveChanges();
+                var mycartheader = await _db.cartHeaders.OrderBy(x=>x).LastOrDefaultAsync();
+                return mycartheader;
+            }
+
+            return mycart;
         }
 
         public async Task<IEnumerable<CartHeader>> GetAllCartheader()

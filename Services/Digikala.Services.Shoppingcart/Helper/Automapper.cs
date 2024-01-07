@@ -12,7 +12,7 @@ namespace Digikala.Services.Shoppingcart.Helper
     {
         public Automapper()
         {
-            CreateMap<Cartdetail, CartDetailDTO>().ForMember(des => des.Headerid, opt => opt.MapFrom(x => x.Headerid)).ForMember(x=>x.productid.id,opt=>opt.MapFrom(x=>x.productid.id));
+            CreateMap<Cartdetail, CartDetailDTO>();
             CreateMap<CartHeader, CartHeaderDTO>();
             CreateMap<Product, ProductDTO>();
         }

@@ -42,71 +42,105 @@ namespace Digikala.Services.Product.Controllers
             _cloudinary = new Cloudinary(acc);
             this._response = new ResponseDTO();
         }
-        public  void SetPicture(IList<IFormFile> mypicture,IFormFile mainpicture)
+        [HttpPost("SetPicture")]
+        public  async Task<IActionResult> SetPicture(IFormFile mainpicture)
         {
-            var file1 = mainpicture;
-            myuploadresult1 = new ImageUploadResult();
-            if (file1.Length > 0)
+            try
             {
-                using (var stream = file1.OpenReadStream())
+                var file1 = mainpicture;
+                myuploadresult1 = new ImageUploadResult();
+                if (file1.Length > 0)
                 {
-                    var uploadpram = new ImageUploadParams()
-                    {
-                        File = new FileDescription(file1.Name, stream)
-                    };
-                    myuploadresult1 = _cloudinary.Upload(uploadpram);
-                }
-            }
-            StringBuilder sb = new StringBuilder();
-            StringBuilder publicID = new StringBuilder();
-            foreach (var item in mypicture)
-            {
-                var file = item;
-                var uploadresult = new ImageUploadResult();
-                if (file.Length > 0)
-                {
-                    using (var stream = file.OpenReadStream())
+                    using (var stream = file1.OpenReadStream())
                     {
                         var uploadpram = new ImageUploadParams()
                         {
-                            File = new FileDescription(file.Name, stream)
+                            File = new FileDescription(file1.Name, stream)
                         };
-                        uploadresult = _cloudinary.Upload(uploadpram);
+                        myuploadresult1 = _cloudinary.Upload(uploadpram);
                     }
                 }
-                sb.AppendLine(uploadresult.Uri.ToString());
-                publicID.AppendLine(uploadresult.PublicId.ToString());
+               
+              
+               // MyurlID = Encoding.UTF8.GetBytes(publicID.ToString());
             }
-            Myurl = Encoding.UTF8.GetBytes(sb.ToString());
-            MyurlID = Encoding.UTF8.GetBytes(publicID.ToString());
+            catch(Exception e)
+            {
+                _response.IsSuccess = false;
+                _response.ErrorMessages = new List<string>() { e.ToString() };
+            }
+            return Ok(_response);
           
+        }
+        [HttpPost("Setseconpicture")]
+        public IActionResult Setseconpicture(IList<IFormFile> mypicture)
+        {
+            try
+            {
+                StringBuilder publicID = new StringBuilder();
+                StringBuilder sb = new StringBuilder();
+                foreach (var item in mypicture)
+                {
+                    var file = item;
+                    var uploadresult = new ImageUploadResult();
+                    if (file.Length > 0)
+                    {
+                        using (var stream = file.OpenReadStream())
+                        {
+                            var uploadpram = new ImageUploadParams()
+                            {
+                                File = new FileDescription(file.Name, stream)
+                            };
+                            uploadresult = _cloudinary.Upload(uploadpram);
+                        }
+                    }
+                    sb.AppendLine(uploadresult.Uri.ToString());
+                    publicID.AppendLine(uploadresult.PublicId.ToString());
+                }
+                Myurl = Encoding.UTF8.GetBytes(sb.ToString());
+                MyurlID = Encoding.UTF8.GetBytes(publicID.ToString());
+            }
+            catch(Exception e)
+            {
+                _response.IsSuccess = false;
+                _response.ErrorMessages = new List<string>() { e.ToString() };
+            }
+            return Ok(_response);
         }
         [HttpPost("addProduct")]
         public async Task<IActionResult> addProduct([FromBody]SetProductDTO setProductDTO)
         {
-            SetPicture(setProductDTO.PictureUrl, setProductDTO.MainPictureUrl);
-            var bsonDocument = BsonDocument.Parse(setProductDTO.information.ToString());
-            var data = await _informationdb.Create(bsonDocument);
-            var id = data["_id"];
-     
-          
-            var mycategory = await _categoryRepository.GetCategory(setProductDTO.Categoryid.ID);
-            var product = new Products
+            try
             {
-                mainpictureUrlID = myuploadresult1.Uri.ToString(),
-                mainpicture = myuploadresult1.PublicId,
-                PictureUrlID = MyurlID,
-                pictures = Myurl,
-                Color = setProductDTO.Color,
-                Informationid = id.ToString(),
-                Insurance = setProductDTO.Insurance,
-                Name = setProductDTO.Name,
-                Nameforushghah = setProductDTO.Nameforushghah,
-                Price = setProductDTO.Price,
-                Categoryid = mycategory
-            };
-             _productRepository.addProduct(product);
-            return Ok();
+                //SetPicture(setProductDTO.PictureUrl, setProductDTO.MainPictureUrl);
+                var bsonDocument = BsonDocument.Parse(setProductDTO.information.ToString());
+                var data = await _informationdb.Create(bsonDocument);
+                var id = data["_id"];
+
+
+                var mycategory = await _categoryRepository.GetCategory(setProductDTO.Categoryid.ID);
+                var product = new Products
+                {
+                    mainpictureUrlID = myuploadresult1.Uri.ToString(),
+                    mainpicture = myuploadresult1.PublicId,
+                    PictureUrlID = MyurlID,
+                    pictures = Myurl,
+                    Color = setProductDTO.Color,
+                    Informationid = id.ToString(),
+                    Insurance = setProductDTO.Insurance,
+                    Name = setProductDTO.Name,
+                    Nameforushghah = setProductDTO.Nameforushghah,
+                    Price = setProductDTO.Price,
+                    Categoryid = mycategory
+                };
+                _productRepository.addProduct(product);
+            }
+            catch(Exception e)
+            {
+                _response.IsSuccess = false;
+                _response.ErrorMessages = new List<string>() { e.ToString() };
+            }
+            return Ok(_response);
         }
         [HttpGet("Getproduct/{id}")]
         public async Task<IActionResult> Getproduct(int id)
@@ -133,16 +167,26 @@ namespace Digikala.Services.Product.Controllers
             {
                 var mylist = new List<dynamic>();
                 var product = await _productRepository.GetProductsbyCategory(name);
+                List<Products> list = new();
                 foreach (var item in product)
                 {
+                    list.Add(item);
                     var myinfo = await _informationdb.GetInformation(item.Informationid);
                     mylist.Add(myinfo.ToJson().Normalize());
                 }
+                
                 var productdto = _mapper.Map<IEnumerable<ProductDTO>>(product);
                 int count = 0;
                 foreach (var item in productdto)
                 {
                     item.Informationid = mylist[count];
+                    if (list[count].PictureUrlID != null)
+                    {
+                        byte[] bytes = list[count].pictures;
+                        var oneBigString = Encoding.ASCII.GetString(bytes);
+                        string[] lines = oneBigString.Split('\n');
+                        item.pictures = lines;
+                    }
                     count++;
                 }
                 _response.Result = productdto;

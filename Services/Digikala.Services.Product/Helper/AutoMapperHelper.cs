@@ -13,9 +13,10 @@ namespace Digikala.Services.Product.Helper
     {
         public AutoMapperHelper()
         {
-            CreateMap<Products, ProductDTO>().ForMember(d => d.Categoryid,
-                mapper => mapper.MapFrom(c => c.Categoryid.ID));
+            CreateMap<Products, ProductDTO>().ForMember(d => d.Categoryid, mapper => mapper.MapFrom(c => c.Categoryid.ID));
+            //CreateMap<System.Collections.Generic.List<Products>, ProductDTO>().AfterMap<Convertfrombsondocumenttostringarray>();
         }
+        
     }
     public class Convertfrombsondocumenttostring : IMappingAction<Products, ProductDTO>
     {
@@ -23,9 +24,26 @@ namespace Digikala.Services.Product.Helper
         {
             byte[] bytes = source.pictures;
             var oneBigString = Encoding.ASCII.GetString(bytes);
-            string?[] lines = oneBigString.Split('\n');
+            string[] lines = oneBigString.Split('\n');
             destination.pictures = lines;
            
+
+        }
+    }
+    public class Convertfrombsondocumenttostringarray : IMappingAction<List<Products>,ProductDTO>
+    {
+        public void Process(List<Products> source,ProductDTO destination, ResolutionContext context)
+        {
+            int count = source.Count;
+            while (count == 0)
+            {
+                byte[] bytes = source[count].pictures;
+                var oneBigString = Encoding.ASCII.GetString(bytes);
+                string?[] lines = oneBigString.Split('\n');
+                destination.pictures = lines;
+                count--;
+            }
+
 
         }
     }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace digika_mobileapp.Models
+namespace digika_mobileapp.Models.Productmodel
 {
     public class CategoryDTO
     {

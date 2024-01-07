@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Digikala.Services.Shoppingcart.Data.Repository
@@ -19,7 +20,7 @@ namespace Digikala.Services.Shoppingcart.Data.Repository
         {
             await _db.products.AddAsync(product);
             _db.SaveChanges();
-            var myproduct = await _db.products.Select(x => x).LastOrDefaultAsync();
+            var myproduct =await  _db.products.OrderBy(x=>x).LastOrDefaultAsync();
             return product;
         }
 

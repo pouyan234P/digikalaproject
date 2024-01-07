@@ -1,23 +1,21 @@
-﻿using Newtonsoft.Json;
+﻿using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace digika_mobileapp.Models
+namespace digika_mobileapp.Models.Productmodel
 {
-    
-    public class ProductDTO
+    public class SetProductDTO
     {
-        public int id { get; set; }
-        public object Informationid { get; set; }
-        public int Categoryid { get; set; }
+        public IFormFile MainPictureUrl { get; set; }
+        public IList<IFormFile> PictureUrl { get; set; }
+        public CategoryDTO Categoryid { get; set; }
         public string Name { get; set; }
         public string Insurance { get; set; }
         public double Price { get; set; }
         public string Color { get; set; }
-        public string mainpictureUrlID { get; set; }
-        public string[] pictures { get; set; }
         public string Nameforushghah { get; set; }
+        public object information { get; set; }
     }
 }

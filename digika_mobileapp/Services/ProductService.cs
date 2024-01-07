@@ -1,5 +1,7 @@
 ﻿using digika_mobileapp.Models;
+using digika_mobileapp.Models.Productmodel;
 using digika_mobileapp.Services.IServices;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,6 +49,26 @@ namespace digika_mobileapp.Services
             });
         }
 
-     
+        public async Task<T> SendpictureAsync<T>(IFormFile mainpicture)
+        {
+            return await this.SendAsync<T>(new ApiRequest()
+            {
+                ApiType = SD.ApiType.POST,
+                Url = SD.ProductApiBase + "/api/Products/SetPicture",
+                file = mainpicture,
+                AccessToken = ""
+            });
+        }
+
+        public async Task<T> SendseconpictureAsync<T>(IList<IFormFile> mypictures)
+        {
+            return await this.SendAsync<T>(new ApiRequest()
+            {
+                ApiType = SD.ApiType.POST,
+                Url = SD.ProductApiBase + "/api/Products/Setseconpicture",
+                Ifile = mypictures,
+                AccessToken = ""
+            });
+        }
     }
 }
