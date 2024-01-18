@@ -151,10 +151,13 @@ namespace Digikala.Services.Product.Controllers
                 var myinfo = await _informationdb.GetInformation(myproduct.Informationid);
                 var myproductdto = _mapper.Map<ProductDTO>(myproduct);
                 myproductdto.Informationid = myinfo.ToString();
-                byte[] bytes = myproduct.pictures;
-                var oneBigString = Encoding.ASCII.GetString(bytes);
-                string[] lines = oneBigString.Split('\n');
-                myproductdto.pictures = lines;
+                if (myproduct.pictures != null)
+                {
+                    byte[] bytes = myproduct.pictures;
+                    var oneBigString = Encoding.ASCII.GetString(bytes);
+                    string[] lines = oneBigString.Split('\n');
+                    myproductdto.pictures = lines;
+                }
                 _response.Result = myproductdto;
             }
             catch(Exception e)

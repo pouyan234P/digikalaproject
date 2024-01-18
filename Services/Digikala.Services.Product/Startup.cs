@@ -39,6 +39,7 @@ namespace Digikala.Services.Product
             services.AddSingleton<IMongoInformationDBContext, MongoInformationDBContex>();
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<IUserpointRepository, UserpointRepository>();
             services.AddAutoMapper(typeof(Startup));
             services.Configure<CloudinarySetting>(Configuration.GetSection("CloudinarySetting"));
             services.AddControllers();

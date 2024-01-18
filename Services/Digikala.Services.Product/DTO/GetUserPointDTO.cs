@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Digikala.Services.Product.Models
+namespace Digikala.Services.Product.DTO
 {
-    public class UserPoint
+    public class GetUserPointDTO
     {
         public int id { get; set; }
-        public Pointofview Pointofiviewid { get; set; }
+        public GetPointofviewDTO Pointofiviewid { get; set; }
         public int Userid { get; set; }
-        public  Products Productid { get; set; }
+        public ProductDTO Productid { get; set; }
     }
 }

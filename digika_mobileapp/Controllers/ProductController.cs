@@ -30,7 +30,7 @@ namespace digika_mobileapp.Controllers
         public async Task<IActionResult> GetProductId(int id)
         {
            
-            ProductDTO list=new();
+           ProductDTO list=new();
             var response = await _productService.GetProductbyIdAsync<ResponseDTO>(id);
             if(response!=null && response.IsSuccess)
             {

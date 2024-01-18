@@ -58,7 +58,7 @@ namespace Digikala.Services.Product.Data.Repository
 
         public async Task<Products> GetProductsbyid(int id)
         {
-            var myproduct = await _db.products.Where(x => x.id == id).Select(x => x).Include(x=>x.Categoryid).FirstOrDefaultAsync();
+            var myproduct =await _db.products.Where(x=>x.id==id).Select(x=>x).Include(t=>t.Categoryid).FirstOrDefaultAsync();
             return myproduct;
         }
     }

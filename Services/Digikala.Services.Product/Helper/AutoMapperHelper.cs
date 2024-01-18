@@ -13,20 +13,31 @@ namespace Digikala.Services.Product.Helper
     {
         public AutoMapperHelper()
         {
+            AllowNullCollections = true;
+            CreateMap<UserPoint, GetUserPointDTO>().ForMember(dest => dest.Pointofiviewid, opt => opt.MapFrom(src => src.Pointofiviewid)).AfterMap<Convertfrombsondocumenttostring>();
+            CreateMap<Pointofview, GetPointofviewDTO>();
             CreateMap<Products, ProductDTO>().ForMember(d => d.Categoryid, mapper => mapper.MapFrom(c => c.Categoryid.ID));
             //CreateMap<System.Collections.Generic.List<Products>, ProductDTO>().AfterMap<Convertfrombsondocumenttostringarray>();
         }
         
     }
-    public class Convertfrombsondocumenttostring : IMappingAction<Products, ProductDTO>
+    public class Convertfrombsondocumenttostring : IMappingAction<UserPoint, GetUserPointDTO>
     {
-        public void Process(Products source, ProductDTO destination, ResolutionContext context)
+        public void Process(UserPoint source, GetUserPointDTO destination, ResolutionContext context)
         {
-            byte[] bytes = source.pictures;
+            /*byte[] bytes = source.Productid.pictures;
             var oneBigString = Encoding.ASCII.GetString(bytes);
             string[] lines = oneBigString.Split('\n');
-            destination.pictures = lines;
-           
+            destination.Productid.pictures = lines;*/
+            byte[] bytes = source.Pointofiviewid.Positivepoints;
+            var oneBigString = Encoding.ASCII.GetString(bytes);
+            string[] lines = oneBigString.Split('\n');
+            destination.Pointofiviewid.Positivepoints = lines;
+            bytes=source.Pointofiviewid.Negativepoints;
+            oneBigString = Encoding.ASCII.GetString(bytes);
+            lines = oneBigString.Split('\n');
+            destination.Pointofiviewid.Negativepoints = lines;
+
 
         }
     }

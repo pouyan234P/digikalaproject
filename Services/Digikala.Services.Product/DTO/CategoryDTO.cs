@@ -10,6 +10,5 @@ namespace Digikala.Services.Product.DTO
         public int ID { get; set; }
         public string CategoryName { get; set; }
         public int CategoryParent { get; set; }
-        public List<ProductDTO> Products { get; set; }
     }
 }
