@@ -131,7 +131,9 @@ namespace Digikala.Services.Product.Controllers
                     Name = setProductDTO.Name,
                     Nameforushghah = setProductDTO.Nameforushghah,
                     Price = setProductDTO.Price,
-                    Categoryid = mycategory
+                    Categoryid = mycategory,
+                    AverageScore=setProductDTO.averageScore,
+                    HashColor=setProductDTO.hashColor
                 };
                 _productRepository.addProduct(product);
             }

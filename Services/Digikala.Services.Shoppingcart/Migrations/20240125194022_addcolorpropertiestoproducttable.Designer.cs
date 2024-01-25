@@ -4,14 +4,16 @@ using Digikala.Services.Shoppingcart.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Digikala.Services.Shoppingcart.Migrations
 {
     [DbContext(typeof(ShoppingcartDatacontext))]
-    partial class ShoppingcartDatacontextModelSnapshot : ModelSnapshot
+    [Migration("20240125194022_addcolorpropertiestoproducttable")]
+    partial class addcolorpropertiestoproducttable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -80,9 +82,6 @@ namespace Digikala.Services.Shoppingcart.Migrations
 
                     b.Property<double>("Price")
                         .HasColumnType("float");
-
-                    b.Property<int?>("hashColor")
-                        .HasColumnType("int");
 
                     b.Property<int>("productid")
                         .HasColumnType("int");

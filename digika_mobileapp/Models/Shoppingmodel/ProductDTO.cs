@@ -12,5 +12,7 @@ namespace digika_mobileapp.Models.Shoppingmodel
         public string Name { get; set; }
         public double Price { get; set; }
         public string Picture { get; set; }
+        public string Color { get; set; }
+        public int? hashColor { get; set; }
     }
 }

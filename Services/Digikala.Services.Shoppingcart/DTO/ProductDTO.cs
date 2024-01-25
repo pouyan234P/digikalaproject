@@ -12,5 +12,7 @@ namespace Digikala.Services.Shoppingcart.DTO
         public string Name { get; set; }
         public double Price { get; set; }
         public string Picture { get; set; }
+        public string Color { get; set; }
+        public int hashColor { get; set; }
     }
 }

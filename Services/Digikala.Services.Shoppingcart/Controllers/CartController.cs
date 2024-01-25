@@ -39,7 +39,9 @@ namespace Digikala.Services.Shoppingcart.Controllers
                     Name = cartDetailDTO.productid.Name,
                     Picture = cartDetailDTO.productid.Picture,
                     Price = cartDetailDTO.productid.Price,
-                    productid=cartDetailDTO.productid.productid
+                    productid=cartDetailDTO.productid.productid,
+                    Color=cartDetailDTO.productid.Color,
+                    hashColor=cartDetailDTO.productid.hashColor
                 };
                 var dataproduct = await _productRepository.Addproduct(myproduct);
                 var mycartheader = new CartHeader
