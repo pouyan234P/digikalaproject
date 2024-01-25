@@ -14,7 +14,7 @@ namespace Digikala.Services.Product.Helper
         public AutoMapperHelper()
         {
             AllowNullCollections = true;
-            CreateMap<UserPoint, GetUserPointDTO>().ForMember(dest => dest.Pointofiviewid, opt => opt.MapFrom(src => src.Pointofiviewid)).AfterMap<Convertfrombsondocumenttostring>();
+            CreateMap<UserPoint, GetUserPointDTO>().ForMember(dest => dest.Pointofviewid, opt => opt.MapFrom(src => src.Pointofiviewid)).AfterMap<Convertfrombsondocumenttostring>();
             CreateMap<Pointofview, GetPointofviewDTO>();
             CreateMap<Products, ProductDTO>().ForMember(d => d.Categoryid, mapper => mapper.MapFrom(c => c.Categoryid.ID));
             //CreateMap<System.Collections.Generic.List<Products>, ProductDTO>().AfterMap<Convertfrombsondocumenttostringarray>();
@@ -32,11 +32,11 @@ namespace Digikala.Services.Product.Helper
             byte[] bytes = source.Pointofiviewid.Positivepoints;
             var oneBigString = Encoding.ASCII.GetString(bytes);
             string[] lines = oneBigString.Split('\n');
-            destination.Pointofiviewid.Positivepoints = lines;
+            destination.Pointofviewid.Positivepoints = lines;
             bytes=source.Pointofiviewid.Negativepoints;
             oneBigString = Encoding.ASCII.GetString(bytes);
             lines = oneBigString.Split('\n');
-            destination.Pointofiviewid.Negativepoints = lines;
+            destination.Pointofviewid.Negativepoints = lines;
 
 
         }

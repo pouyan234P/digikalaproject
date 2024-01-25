@@ -33,13 +33,13 @@ namespace Digikala.Services.Product.Controllers
             {
                 var mypointofiview = new Pointofview
                 {
-                    Commenttext = getUserPointDTO.Pointofiviewid.Commenttext,
-                    Commenttitle = getUserPointDTO.Pointofiviewid.Commenttitle,
-                    Score = getUserPointDTO.Pointofiviewid.Score
+                    Commenttext = getUserPointDTO.Pointofviewid.Commenttext,
+                    Commenttitle = getUserPointDTO.Pointofviewid.Commenttitle,
+                    Score = getUserPointDTO.Pointofviewid.Score
                 };
-                string joinedpositive = string.Join("\n", getUserPointDTO.Pointofiviewid.Positivepoints);
+                string joinedpositive = string.Join("\n", getUserPointDTO.Pointofviewid.Positivepoints);
                 mypointofiview.Positivepoints = Encoding.UTF8.GetBytes(joinedpositive);
-                string joinnegative = string.Join("\n", getUserPointDTO.Pointofiviewid.Negativepoints);
+                string joinnegative = string.Join("\n", getUserPointDTO.Pointofviewid.Negativepoints);
                 mypointofiview.Negativepoints = Encoding.UTF8.GetBytes(joinnegative);
                 var myproduct = new Products
                 {

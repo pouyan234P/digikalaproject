@@ -23,7 +23,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Digikala.Services.Checkout"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Digikala.Services.Payment", "Services\Digikala.Services.Payment\Digikala.Services.Payment.csproj", "{DC05810E-22AC-4290-8DD8-1B11574D5076}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Digikala.Services.Product", "Services\Digikala.Services.Product\Digikala.Services.Product.csproj", "{13C0809A-CC23-49A0-A7DB-E220B003D885}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Digikala.Services.Product", "Services\Digikala.Services.Product\Digikala.Services.Product.csproj", "{13C0809A-CC23-49A0-A7DB-E220B003D885}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateway", "Gateway", "{1D908516-182C-45EA-BC67-EC8089A30BB8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Digikala.GatewaySolution", "Gateway\Digikala.GatewaySolution\Digikala.GatewaySolution.csproj", "{2A23AE31-59CE-4B9A-A9DD-832B33316FC9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +67,10 @@ Global
 		{13C0809A-CC23-49A0-A7DB-E220B003D885}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13C0809A-CC23-49A0-A7DB-E220B003D885}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{13C0809A-CC23-49A0-A7DB-E220B003D885}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A23AE31-59CE-4B9A-A9DD-832B33316FC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A23AE31-59CE-4B9A-A9DD-832B33316FC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A23AE31-59CE-4B9A-A9DD-832B33316FC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A23AE31-59CE-4B9A-A9DD-832B33316FC9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -76,6 +84,7 @@ Global
 		{91309868-4E1E-4F14-9E70-DE439A2B0A5B} = {4EEAE228-B525-4895-AC8A-7EA68A269F3C}
 		{DC05810E-22AC-4290-8DD8-1B11574D5076} = {4EEAE228-B525-4895-AC8A-7EA68A269F3C}
 		{13C0809A-CC23-49A0-A7DB-E220B003D885} = {4EEAE228-B525-4895-AC8A-7EA68A269F3C}
+		{2A23AE31-59CE-4B9A-A9DD-832B33316FC9} = {1D908516-182C-45EA-BC67-EC8089A30BB8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {060C25D7-25D1-40B2-85CB-F5720C8BEEC8}

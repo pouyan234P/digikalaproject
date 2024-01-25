@@ -43,9 +43,9 @@ namespace Digikala.Services.Product.Data.Repository
             var query = from c in _db.categories
                         join p in _db.products on c.ID equals p.Categoryid.CategoryParent
                         join c2 in _db.categories on c.CategoryParent equals c2.ID
-                        where c2.CategoryName == name 
+                        where (c2.CategoryName == name 
                         ||
-                         c.CategoryName==name
+                         c.CategoryName==name)
                          ||
                          p.Name.Contains(name)
                         select p;

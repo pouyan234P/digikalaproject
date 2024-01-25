@@ -142,7 +142,8 @@ namespace Digikala.Services.Product.Controllers
             }
             return Ok(_response);
         }
-        [HttpGet("Getproduct/{id}")]
+        [HttpGet]
+        [Route("Getproduct/{id}")]
         public async Task<IActionResult> Getproduct(int id)
         {
             try
