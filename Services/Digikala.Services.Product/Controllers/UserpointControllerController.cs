@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Digikala.Services.Product.Data.Repository;
 using Digikala.Services.Product.DTO;
+using Digikala.Services.Product.Helper;
 using Digikala.Services.Product.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -62,16 +63,20 @@ namespace Digikala.Services.Product.Controllers
             return Ok(_response);
         }
         [HttpGet("GetUserpoints/{productid}")]
-        public async Task<IActionResult> GetUserpoints(int productid)
+        public async Task<IActionResult> GetUserpoints(int productid,UserParams userParams)
         {
            try
             {
-                IEnumerable<UserPoint> myuserpoint = await _userpointRepository.GetUserPoints(productid);
+                IEnumerable<UserPoint> myuserpoint = await _userpointRepository.GetUserPoints(productid,userParams);
                
                 //IEnumerable<UserPoint> enumerable = (IEnumerable<UserPoint>)myuserpoint.ToList();
 
                 var myuserpointdto = _mapper.Map<IEnumerable<GetUserPointDTO>>(myuserpoint);
                 _response.Result = myuserpointdto;
+                _response.currentPage = product.CurrentPage;
+                _response.itemsPerPage = product.PageSize;
+                _response.totalItems = product.TotalCount;
+                _response.totalPages = product.TotalPage;
             }
             catch(Exception e)
             {

@@ -80,8 +80,8 @@ namespace Digikala.Services.Product.Migrations
                     b.Property<string>("Color")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("HashColor")
-                        .HasColumnType("int");
+                    b.Property<string>("HashColor")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Informationid")
                         .HasColumnType("nvarchar(max)");

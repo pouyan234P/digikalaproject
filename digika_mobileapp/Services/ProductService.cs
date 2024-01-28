@@ -1,4 +1,5 @@
-﻿using digika_mobileapp.Models;
+﻿using digika_mobileapp.Helper;
+using digika_mobileapp.Models;
 using digika_mobileapp.Models.Productmodel;
 using digika_mobileapp.Services.IServices;
 using Microsoft.AspNetCore.Http;
@@ -39,12 +40,12 @@ namespace digika_mobileapp.Services
             });
         }
 
-        public async Task<T> SearchAsync<T>(string name)
+        public async Task<T> SearchAsync<T>(string name,UserParams userParams)
         {
             return await this.SendAsync<T>(new ApiRequest()
             {
                 ApiType = SD.ApiType.GET,
-                Url =SD.ProductApiBase+ "/api/Products/SearchbyCategory/"+name,
+                Url =SD.ProductApiBase+ "/api/Products/SearchbyCategory/"+name+"?"+ "PageNumber=" + userParams.PageNumber,
                 AccessToken=""
             });
         }

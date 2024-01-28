@@ -1,4 +1,5 @@
-﻿using Digikala.Services.Product.Models;
+﻿using Digikala.Services.Product.Helper;
+using Digikala.Services.Product.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace Digikala.Services.Product.Data.Repository
    public interface IUserpointRepository
     {
        Task AddUserpoint(UserPoint userPoint);
-        Task<IEnumerable<UserPoint>> GetUserPoints(int productid);
+        Task<PagedList<UserPoint>> GetUserPoints(int productid,UserParams userParams);
         Task<UserPoint> GetUserPoint(int id);
     }
 }

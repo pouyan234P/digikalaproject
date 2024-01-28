@@ -1,4 +1,5 @@
-﻿using digika_mobileapp.Models;
+﻿using digika_mobileapp.Helper;
+using digika_mobileapp.Models;
 using digika_mobileapp.Models.Shoppingmodel;
 using digika_mobileapp.Services.IServices;
 using Microsoft.AspNetCore.Http;
@@ -34,14 +35,15 @@ namespace digika_mobileapp.Controllers
             return Ok(response.DisplayMessage);
         }
         [HttpGet("GetAllShoppingcart/{userid}")]
-        public async Task<IActionResult> GetAllShoppingcart(int userid)
+        public async Task<IActionResult> GetAllShoppingcart(int userid,UserParams userParams)
         {
             List<CartDetailDTO> list = new();
-            var response = await _shoppingService.GetAllShoppingcart<ResponseDTO>(userid);
+            var response = await _shoppingService.GetAllShoppingcart<ResponseDTO>(userid,userParams);
             if(response!=null && response.IsSuccess)
             {
                 list = JsonConvert.DeserializeObject<List<CartDetailDTO>>(Convert.ToString(response.Result));
             }
+            Response.AddPagination((int)response.currentPage, (int)response.itemsPerPage, (int)response.totalItems, (int)response.totalPages);
             return Ok(list);
         }
         [HttpGet("GetShoppingcart/{detailid}")]

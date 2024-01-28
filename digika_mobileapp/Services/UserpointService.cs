@@ -1,4 +1,5 @@
-﻿using digika_mobileapp.Models;
+﻿using digika_mobileapp.Helper;
+using digika_mobileapp.Models;
 using digika_mobileapp.Models.Productmodel;
 using digika_mobileapp.Services.IServices;
 using System;
@@ -36,12 +37,12 @@ namespace digika_mobileapp.Services
             });
         }
 
-        public async Task<T> GetUserpoints<T>(int productid)
+        public async Task<T> GetUserpoints<T>(int productid,UserParams userParams)
         {
             return await this.SendAsync<T>(new ApiRequest
             {
                 ApiType=SD.ApiType.GET,
-                Url=SD.ProductApiBase+ "/api/Userpoint/GetUserpoints/"+productid
+                Url=SD.ProductApiBase+ "/api/Userpoint/GetUserpoints/"+productid + "?" + "PageNumber=" + userParams.PageNumber,
             });
         }
     }

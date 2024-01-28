@@ -20,6 +20,6 @@ namespace Digikala.Services.Product.Models
         public byte[] PictureUrlID { get; set; }
         public string Nameforushghah { get; set; }
         public double AverageScore { get; set; }
-        public int HashColor { get; set; }
+        public string HashColor { get; set; }
     }
 }

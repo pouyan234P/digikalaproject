@@ -18,6 +18,6 @@ namespace Digikala.Services.Product.DTO
         public string Nameforushghah { get; set; }
         public object information { get; set; }
         public double averageScore { get; set; }
-        public int hashColor { get; set; }
+        public string hashColor { get; set; }
     }
 }

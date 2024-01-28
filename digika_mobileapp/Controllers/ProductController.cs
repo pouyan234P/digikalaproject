@@ -1,4 +1,5 @@
 ﻿
+using digika_mobileapp.Helper;
 using digika_mobileapp.Models;
 using digika_mobileapp.Models.Productmodel;
 using digika_mobileapp.Services.IServices;
@@ -39,14 +40,16 @@ namespace digika_mobileapp.Controllers
             return Ok(list);
         }
         [HttpGet("Getbyserch/{name}")]
-        public async Task<IActionResult> Getbyserch(string name)
+        public async Task<IActionResult> Getbyserch(string name,[FromQuery]UserParams userParams)
         {
             List<ProductDTO> list = new();
-            var response = await _productService.SearchAsync<ResponseDTO>(name);
+            var response = await _productService.SearchAsync<ResponseDTO>(name,userParams);
+
             if(response!=null && response.IsSuccess)
             {
                 list = JsonConvert.DeserializeObject<List<ProductDTO>>(Convert.ToString(response.Result));
             }
+            Response.AddPagination((int) response.currentPage, (int)response.itemsPerPage, (int)response.totalItems, (int)response.totalPages);
             return Ok(list);
         }
         [HttpPost("Picture")]

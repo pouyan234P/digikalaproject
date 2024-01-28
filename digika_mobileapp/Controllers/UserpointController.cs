@@ -1,4 +1,5 @@
-﻿using digika_mobileapp.Models;
+﻿using digika_mobileapp.Helper;
+using digika_mobileapp.Models;
 using digika_mobileapp.Models.Productmodel;
 using digika_mobileapp.Services.IServices;
 using Microsoft.AspNetCore.Http;
@@ -32,13 +33,14 @@ namespace digika_mobileapp.Controllers
             return BadRequest(response.ErrorMessages);
         }
         [HttpGet("GetUserpoints/{productid}")]
-        public async Task<IActionResult> GetUserpoints(int productid)
+        public async Task<IActionResult> GetUserpoints(int productid,UserParams userParams)
         {
             List<GetUserPointDTO> list = new();
-            var response = await _userpointService.GetUserpoints<ResponseDTO>(productid);
+            var response = await _userpointService.GetUserpoints<ResponseDTO>(productid,userParams);
             if(response!=null && response.IsSuccess)
             {
                 list = JsonConvert.DeserializeObject<List<GetUserPointDTO>>(Convert.ToString(response.Result));
+                Response.AddPagination((int)response.currentPage, (int)response.itemsPerPage, (int)response.totalItems, (int)response.totalPages);
                 return Ok(list);
             }
             return BadRequest(response.ErrorMessages);

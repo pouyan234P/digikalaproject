@@ -1,4 +1,5 @@
-﻿using Digikala.Services.Product.Models;
+﻿using Digikala.Services.Product.Helper;
+using Digikala.Services.Product.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -33,10 +34,10 @@ namespace Digikala.Services.Product.Data.Repository
             return myuserpoint;
         }
 
-        public async Task<IEnumerable<UserPoint>> GetUserPoints(int productid)
+        public async Task<PagedList<UserPoint>> GetUserPoints(int productid,UserParams userParams)
         {
-            var myuserpoint = await _db.userPoints.Where(x => x.Productid.id == productid).Include(x => x.Pointofiviewid).Include(x => x.Productid).ThenInclude(x=>x.Categoryid).ToListAsync();
-            return myuserpoint;
+            var myuserpoint =  _db.userPoints.Where(x => x.Productid.id == productid).Include(x => x.Pointofiviewid).Include(x => x.Productid).ThenInclude(x=>x.Categoryid);
+            return await PagedList<UserPoint>.CreateAsynce(myuserpoint, userParams.PageNumber, userParams.pageSize);
         }
     }
 }

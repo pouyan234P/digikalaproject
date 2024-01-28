@@ -171,12 +171,13 @@ namespace Digikala.Services.Product.Controllers
             return Ok(_response);
         }
         [HttpGet("SearchbyCategory/{name}")]
-        public async Task<IActionResult> SearchbyCategory(string name)
+        public async Task<IActionResult> SearchbyCategory(string name,[FromQuery]UserParams userParams)
         {
             try
             {
                 var mylist = new List<dynamic>();
-                var product = await _productRepository.GetProductsbyCategory(name);
+                var product = await _productRepository.GetProductsbyCategory(name,userParams);
+                
                 List<Products> list = new();
                 foreach (var item in product)
                 {
@@ -186,6 +187,7 @@ namespace Digikala.Services.Product.Controllers
                 }
                 
                 var productdto = _mapper.Map<IEnumerable<ProductDTO>>(product);
+                
                 int count = 0;
                 foreach (var item in productdto)
                 {
@@ -199,7 +201,12 @@ namespace Digikala.Services.Product.Controllers
                     }
                     count++;
                 }
+                
                 _response.Result = productdto;
+                _response.currentPage = product.CurrentPage;
+                _response.itemsPerPage = product.PageSize;
+                _response.totalItems = product.TotalCount;
+                _response.totalPages = product.TotalPage;
             }
             catch(Exception e)
             {
@@ -208,5 +215,6 @@ namespace Digikala.Services.Product.Controllers
             }
             return Ok(_response);
         }
+
     }
 }

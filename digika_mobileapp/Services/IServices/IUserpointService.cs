@@ -1,4 +1,5 @@
-﻿using digika_mobileapp.Models.Productmodel;
+﻿using digika_mobileapp.Helper;
+using digika_mobileapp.Models.Productmodel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace digika_mobileapp.Services.IServices
    public interface IUserpointService:IBaseService
     {
         Task<T> addUserpoint<T>(GetUserPointDTO getUserPointDTO);
-        Task<T> GetUserpoints<T>(int productid);
+        Task<T> GetUserpoints<T>(int productid,UserParams userParams);
         Task<T> GetUserpoint<T>(int userpointid);
     }
 }

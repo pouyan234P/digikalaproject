@@ -1,4 +1,5 @@
-﻿using Digikala.Services.Shoppingcart.Models;
+﻿using Digikala.Services.Shoppingcart.Helper;
+using Digikala.Services.Shoppingcart.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -23,10 +24,10 @@ namespace Digikala.Services.Shoppingcart.Data.Repository
             return mycartdetail;
         }
 
-        public async Task<IEnumerable<Cartdetail>> GetAllCartdetail(int Userid)
+        public async Task<PagedList<Cartdetail>> GetAllCartdetail(int Userid,UserParams userParams)
         {
-            var mycartdetail = await _db.cartdetails.Where(x => x.Headerid.Userid == Userid).Include(x=>x.productid).Include(x=>x.Headerid).ToListAsync();
-            return mycartdetail;
+            var mycartdetail =  _db.cartdetails.Where(x => x.Headerid.Userid == Userid).Include(x => x.productid).Include(x => x.Headerid);
+            return await PagedList<Cartdetail>.CreateAsynce(mycartdetail, userParams.PageNumber, userParams.pageSize);
         }
 
         public async Task<Cartdetail> GetCartdetail(int id)

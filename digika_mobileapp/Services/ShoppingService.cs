@@ -1,4 +1,5 @@
-﻿using digika_mobileapp.Models;
+﻿using digika_mobileapp.Helper;
+using digika_mobileapp.Models;
 using digika_mobileapp.Models.Shoppingmodel;
 using digika_mobileapp.Services.IServices;
 using System;
@@ -28,12 +29,12 @@ namespace digika_mobileapp.Services
             });
         }
 
-        public async Task<T> GetAllShoppingcart<T>(int userid)
+        public async Task<T> GetAllShoppingcart<T>(int userid,UserParams userParams)
         {
             return await this.SendAsync<T>(new ApiRequest
             {
                 ApiType = SD.ApiType.GET,
-                Url = SD.ShoppingApiBase + "/api/Cart/GetAllShoppingcart/" + userid,
+                Url = SD.ShoppingApiBase + "/api/Cart/GetAllShoppingcart/" + userid + "?" + "PageNumber=" + userParams.PageNumber,
                 AccessToken = ""
             });
         }

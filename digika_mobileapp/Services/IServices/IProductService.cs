@@ -1,4 +1,5 @@
-﻿using digika_mobileapp.Models.Productmodel;
+﻿using digika_mobileapp.Helper;
+using digika_mobileapp.Models.Productmodel;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ namespace digika_mobileapp.Services.IServices
 {
    public interface IProductService:IBaseService
     {
-        Task<T> SearchAsync<T>(string name);
+        Task<T> SearchAsync<T>(string name,UserParams userParams);
         Task<T> GetProductbyIdAsync<T>(int id);
         Task<T> CreateProductAsync<T>(SetProductDTO setProductDTO);
         Task<T> SendpictureAsync<T>( IFormFile mainpicture);

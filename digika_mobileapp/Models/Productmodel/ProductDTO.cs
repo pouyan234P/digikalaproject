@@ -20,6 +20,6 @@ namespace digika_mobileapp.Models.Productmodel
         public string[] pictures { get; set; }
         public string Nameforushghah { get; set; }
         public double? averageScore { get; set; }
-        public int? hashColor { get; set; }
+        public string hashColor { get; set; }
     }
 }

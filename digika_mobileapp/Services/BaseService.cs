@@ -97,6 +97,11 @@ namespace digika_mobileapp.Services
                 apiresponse = await client.SendAsync(message);
                 var apicontent = await apiresponse.Content.ReadAsStringAsync();
                 var apiresponsedto = JsonConvert.DeserializeObject<T>(apicontent);
+                /*var myitem;
+                foreach(var item in apiresponse.Headers)
+                {
+                  myitem=item.  
+                }*/
                 return apiresponsedto;
             }
             catch(Exception e)

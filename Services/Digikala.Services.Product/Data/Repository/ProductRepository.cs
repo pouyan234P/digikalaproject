@@ -1,4 +1,5 @@
-﻿using Digikala.Services.Product.Models;
+﻿using Digikala.Services.Product.Helper;
+using Digikala.Services.Product.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -27,7 +28,7 @@ namespace Digikala.Services.Product.Data.Repository
             return myproduct;
         }
 
-        public async Task<IEnumerable<Products>> GetProductsbyCategory(string name)
+        public async Task<PagedList<Products>> GetProductsbyCategory(string name,UserParams userParams)
         {
 
             /*  var categoryAndSubcategories =await _db.categories
@@ -50,8 +51,8 @@ namespace Digikala.Services.Product.Data.Repository
                          p.Name.Contains(name)
                         select p;
 
-            var products = await query.Include(t=>t.Categoryid).ToListAsync();
-            return products;
+            var products =  query.Include(t=>t.Categoryid);
+            return await PagedList<Products>.CreateAsynce(products,userParams.PageNumber,userParams.pageSize);
            
            
         }

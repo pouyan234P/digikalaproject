@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Digikala.Services.Shoppingcart.Data.Repository;
 using Digikala.Services.Shoppingcart.DTO;
+using Digikala.Services.Shoppingcart.Helper;
 using Digikala.Services.Shoppingcart.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -66,14 +67,19 @@ namespace Digikala.Services.Shoppingcart.Controllers
             }
             return Ok(_response);
         }
-        [HttpGet("GetAllShoppingcart/{userid}")]
-        public async Task<IActionResult> GetAllShoppingcart(int userid)
+        [HttpGet]
+        [Route("GetAllShoppingcart/{userid}")]
+        public async Task<IActionResult> GetAllShoppingcart(int userid,UserParams userParams)
         {
             try
             {
-                var myshop = await _cartdetailRepository.GetAllCartdetail(userid);
+                var myshop = await _cartdetailRepository.GetAllCartdetail(userid,userParams);
                 var myshopdto = _mapper.Map<IEnumerable<CartDetailDTO>>(myshop);
                 _response.Result = myshopdto;
+                _response.currentPage = myshop.CurrentPage;
+                _response.itemsPerPage = myshop.PageSize;
+                _response.totalItems = myshop.TotalCount;
+                _response.totalPages = myshop.TotalPage;
             }
             catch(Exception e)
             {

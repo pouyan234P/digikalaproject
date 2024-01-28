@@ -81,8 +81,8 @@ namespace Digikala.Services.Shoppingcart.Migrations
                     b.Property<double>("Price")
                         .HasColumnType("float");
 
-                    b.Property<int?>("hashColor")
-                        .HasColumnType("int");
+                    b.Property<string>("hashColor")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("productid")
                         .HasColumnType("int");
