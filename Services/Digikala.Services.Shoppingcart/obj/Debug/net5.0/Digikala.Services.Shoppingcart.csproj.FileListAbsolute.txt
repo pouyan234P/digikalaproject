@@ -91,7 +91,6 @@ C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Di
 C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Shoppingcart\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Shoppingcart\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Shoppingcart\bin\Debug\net5.0\Microsoft.OpenApi.dll
-C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Shoppingcart\bin\Debug\net5.0\Newtonsoft.Json.dll
 C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Shoppingcart\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Shoppingcart\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Shoppingcart\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -132,3 +131,8 @@ C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Di
 C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Shoppingcart\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
 C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Shoppingcart\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
 C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Shoppingcart\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Shoppingcart\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Shoppingcart\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Shoppingcart\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Shoppingcart\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Shoppingcart\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll

@@ -5,6 +5,7 @@ using Digikala.Services.Product.Data.Repository;
 using Digikala.Services.Product.DTO;
 using Digikala.Services.Product.Helper;
 using Digikala.Services.Product.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
@@ -17,6 +18,7 @@ using System.Threading.Tasks;
 
 namespace Digikala.Services.Product.Controllers
 {
+    [AllowAnonymous]
     [Route("api/[controller]")]
     [ApiController]
     public class ProductsController : ControllerBase
@@ -108,6 +110,7 @@ namespace Digikala.Services.Product.Controllers
             return Ok(_response);
         }
         [HttpPost("addProduct")]
+        [Authorize(Policy = "RequireAdminRole")]
         public async Task<IActionResult> addProduct([FromBody]SetProductDTO setProductDTO)
         {
             try

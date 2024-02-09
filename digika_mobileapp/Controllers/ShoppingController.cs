@@ -2,6 +2,8 @@
 using digika_mobileapp.Models;
 using digika_mobileapp.Models.Shoppingmodel;
 using digika_mobileapp.Services.IServices;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -26,7 +28,8 @@ namespace digika_mobileapp.Controllers
         public async Task<IActionResult> Addcart([FromBody]CartDetailDTO cartDetailDTO)
         {
             CartDetailDTO list = new();
-          var response=  await _shoppingService.AddShoppingcart<ResponseDTO>(cartDetailDTO);
+            var accessToken = await HttpContext.GetTokenAsync("access_token");
+            var response=  await _shoppingService.AddShoppingcart<ResponseDTO>(cartDetailDTO, accessToken);
             if(response.IsSuccess && response!=null )
             {
                 list = JsonConvert.DeserializeObject<CartDetailDTO>(Convert.ToString(response.Result));
@@ -35,10 +38,11 @@ namespace digika_mobileapp.Controllers
             return Ok(response.DisplayMessage);
         }
         [HttpGet("GetAllShoppingcart/{userid}")]
-        public async Task<IActionResult> GetAllShoppingcart(int userid,UserParams userParams)
+        public async Task<IActionResult> GetAllShoppingcart(int userid,[FromQuery]UserParams userParams)
         {
             List<CartDetailDTO> list = new();
-            var response = await _shoppingService.GetAllShoppingcart<ResponseDTO>(userid,userParams);
+            var accessToken = await HttpContext.GetTokenAsync("access_token");
+            var response = await _shoppingService.GetAllShoppingcart<ResponseDTO>(userid,userParams, accessToken);
             if(response!=null && response.IsSuccess)
             {
                 list = JsonConvert.DeserializeObject<List<CartDetailDTO>>(Convert.ToString(response.Result));
@@ -50,7 +54,8 @@ namespace digika_mobileapp.Controllers
         public async Task<IActionResult> GetShoppingcart(int detailid)
         {
             CartDetailDTO list=new();
-            var response = await _shoppingService.GetShoppingcart<ResponseDTO>(detailid);
+            var accessToken = await HttpContext.GetTokenAsync("access_token");
+            var response = await _shoppingService.GetShoppingcart<ResponseDTO>(detailid, accessToken);
             if(response!=null && response.IsSuccess)
             {
                 list = JsonConvert.DeserializeObject<CartDetailDTO>(Convert.ToString(response.Result));

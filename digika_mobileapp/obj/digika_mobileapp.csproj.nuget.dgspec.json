@@ -44,9 +44,13 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
-            "Newtonsoft.Json": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
-              "version": "[13.0.3, )"
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[3.1.32, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -115,21 +119,21 @@
               "target": "Package",
               "version": "[8.1.1, )"
             },
-            "Duende.IdentityServer.AspNetIdentity": {
-              "target": "Package",
-              "version": "[5.2.4, )"
-            },
-            "IdentityModel": {
-              "target": "Package",
-              "version": "[6.2.0, )"
-            },
             "MailKit": {
               "target": "Package",
               "version": "[4.3.0, )"
             },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.17, )"
+            },
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[3.1.32, )"
             },
             "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
               "target": "Package",
@@ -148,10 +152,6 @@
             "MimeKit": {
               "target": "Package",
               "version": "[4.3.0, )"
-            },
-            "Newtonsoft.Json": {
-              "target": "Package",
-              "version": "[13.0.3, )"
             }
           },
           "imports": [

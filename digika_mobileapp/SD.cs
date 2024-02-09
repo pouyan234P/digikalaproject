@@ -9,6 +9,7 @@ namespace digika_mobileapp
     {
         public static string ProductApiBase { get; set; }
         public static string ShoppingApiBase { get; set; }
+        public static string Identity { get; set; }
         public enum ApiType
         {
             GET,

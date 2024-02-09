@@ -1094,13 +1094,8 @@ C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Di
 C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Identity\bin\Debug\net5.0\AutoMapper.dll
 C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Identity\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Identity\bin\Debug\net5.0\BouncyCastle.Cryptography.dll
-C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Identity\bin\Debug\net5.0\Duende.IdentityServer.dll
-C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Identity\bin\Debug\net5.0\Duende.IdentityServer.AspNetIdentity.dll
-C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Identity\bin\Debug\net5.0\Duende.IdentityServer.Storage.dll
 C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Identity\bin\Debug\net5.0\Humanizer.dll
-C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Identity\bin\Debug\net5.0\IdentityModel.dll
 C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Identity\bin\Debug\net5.0\MailKit.dll
-C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Identity\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
 C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Identity\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Identity\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Identity\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
@@ -1137,8 +1132,6 @@ C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Di
 C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Identity\bin\Debug\net5.0\System.Security.Cryptography.Pkcs.dll
 C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Identity\bin\Debug\net5.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Identity\bin\Debug\net5.0\System.Text.Encoding.CodePages.dll
-C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Identity\bin\Debug\net5.0\System.Text.Encodings.Web.dll
-C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Identity\bin\Debug\net5.0\System.Text.Json.dll
 C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Identity\bin\Debug\net5.0\cs\Microsoft.CodeAnalysis.resources.dll
 C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Identity\bin\Debug\net5.0\de\Microsoft.CodeAnalysis.resources.dll
 C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Identity\bin\Debug\net5.0\es\Microsoft.CodeAnalysis.resources.dll
@@ -1213,3 +1206,9 @@ C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Di
 C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Identity\obj\Debug\net5.0\ref\Digikala.Services.Identity.dll
 C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Identity\obj\Debug\net5.0\Digikala.Services.Identity.pdb
 C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Identity\obj\Debug\net5.0\Digikala.Services.Identity.genruntimeconfig.cache
+C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Identity\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Identity\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Identity\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Identity\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
+C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Identity\bin\Debug\net5.0\refs\System.Text.Encodings.Web.dll
+C:\Users\pouyan\Documents\Visual Studio 2019\project\digikalaproject\Services\Digikala.Services.Identity\bin\Debug\net5.0\refs\System.Text.Json.dll

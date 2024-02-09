@@ -1,5 +1,4 @@
-﻿using Duende.IdentityServer;
-using Duende.IdentityServer.Models;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +8,7 @@ namespace Digikala.Services.Identity
 {
     public static class SD
     {
-        public const string Admin = "Admin";
+        /*public const string Admin = "Admin";
         public const string Customer = "Customer";
 
         public static IEnumerable<IdentityResource> IdentityResources =>
@@ -53,6 +52,6 @@ namespace Digikala.Services.Identity
                     }
                 },
 
-            };
+            };*/
     }
 }

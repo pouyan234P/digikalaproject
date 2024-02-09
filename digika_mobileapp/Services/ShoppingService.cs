@@ -18,34 +18,34 @@ namespace digika_mobileapp.Services
         {
             _clientFactory = clientFactory;
         }
-        public async Task<T> AddShoppingcart<T>(CartDetailDTO CartDetailDTO)
+        public async Task<T> AddShoppingcart<T>(CartDetailDTO CartDetailDTO, string token)
         {
             return await this.SendAsync<T>(new ApiRequest
             {
                 ApiType=SD.ApiType.POST,
-                Url=SD.ShoppingApiBase+ "/api/Cart/AddShoppingcart",
+                Url=SD.ShoppingApiBase + "/api/Cart/AddShoppingcart",
                 Data=CartDetailDTO,
-                AccessToken=""
+                AccessToken=token
             });
         }
 
-        public async Task<T> GetAllShoppingcart<T>(int userid,UserParams userParams)
+        public async Task<T> GetAllShoppingcart<T>(int userid,UserParams userParams, string token)
         {
             return await this.SendAsync<T>(new ApiRequest
             {
                 ApiType = SD.ApiType.GET,
                 Url = SD.ShoppingApiBase + "/api/Cart/GetAllShoppingcart/" + userid + "?" + "PageNumber=" + userParams.PageNumber,
-                AccessToken = ""
+                AccessToken = token
             });
         }
 
-        public async Task<T> GetShoppingcart<T>(int detailid)
+        public async Task<T> GetShoppingcart<T>(int detailid, string token)
         {
             return await this.SendAsync<T>(new ApiRequest
             {
                 ApiType = SD.ApiType.GET,
                 Url = SD.ShoppingApiBase + "/api/Cart/GetShoppingcart/" + detailid,
-                AccessToken = ""
+                AccessToken = token
             });
         }
     }

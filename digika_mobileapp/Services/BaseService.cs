@@ -78,6 +78,10 @@ namespace digika_mobileapp.Services
                     var stringContent = new StringContent(JsonConvert.SerializeObject(apiRequest.Data), Encoding.UTF8, "application/json");
                     message.Content = stringContent;
                 }
+                if(!string.IsNullOrEmpty(apiRequest.AccessToken))
+                {
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiRequest.AccessToken);
+                }
                 HttpResponseMessage apiresponse = null;
                 switch(apiRequest.ApiType)
                 {
