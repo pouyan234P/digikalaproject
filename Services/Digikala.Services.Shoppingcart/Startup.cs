@@ -59,7 +59,6 @@ namespace Digikala.Services.Shoppingcart
             {
                 opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
             });
-            services.AddControllers();
             services.AddDbContext<ShoppingcartDatacontext>(x => x.UseSqlServer(Configuration.GetConnectionString("myconn")));
             services.AddAutoMapper(typeof(Startup));
             services.AddScoped<IProductRepository,ProductRepository>();

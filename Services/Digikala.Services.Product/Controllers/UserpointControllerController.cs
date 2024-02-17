@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace Digikala.Services.Product.Controllers
 {
-    [Authorize]
+    [AllowAnonymous]
     [Route("api/[controller]")]
     [ApiController]
     public class UserpointController : ControllerBase
@@ -29,6 +29,7 @@ namespace Digikala.Services.Product.Controllers
             _mapper = mapper;
             this._response = new ResponseDTO();
         }
+        [Authorize]
         [HttpPost("addUserpoint")]
         public async Task<IActionResult> addUserpoint([FromBody]GetUserPointDTO getUserPointDTO)
         {
@@ -64,6 +65,7 @@ namespace Digikala.Services.Product.Controllers
             }
             return Ok(_response);
         }
+        [AllowAnonymous]
         [HttpGet("GetUserpoints/{productid}")]
         public async Task<IActionResult> GetUserpoints(int productid,[FromQuery]UserParams userParams)
         {

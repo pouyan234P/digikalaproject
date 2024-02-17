@@ -2,6 +2,8 @@
 using digika_mobileapp.Models;
 using digika_mobileapp.Models.Productmodel;
 using digika_mobileapp.Services.IServices;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -12,6 +14,7 @@ using System.Threading.Tasks;
 
 namespace digika_mobileapp.Controllers
 {
+    [AllowAnonymous]
     [Route("api/[controller]")]
     [ApiController]
     public class UserpointController : ControllerBase
@@ -22,16 +25,19 @@ namespace digika_mobileapp.Controllers
         {
             _userpointService = userpointService;
         }
+        [Authorize]
         [HttpPost("addUserpoint")]
         public async Task<IActionResult> addUserpoint([FromBody]GetUserPointDTO getUserPointDTO)
         {
-            var response = await _userpointService.addUserpoint<ResponseDTO>(getUserPointDTO);
+            var accessToken = await HttpContext.GetTokenAsync("access_token");
+            var response = await _userpointService.addUserpoint<ResponseDTO>(getUserPointDTO,accessToken);
             if(response.IsSuccess)
             {
                 return Ok(response);
             }
             return BadRequest(response.ErrorMessages);
         }
+        [AllowAnonymous]
         [HttpGet("GetUserpoints/{productid}")]
         public async Task<IActionResult> GetUserpoints(int productid,[FromQuery]UserParams userParams)
         {

@@ -18,13 +18,14 @@ namespace digika_mobileapp.Services
         {
             _httpClientFactory = httpClientFactory;
         }
-        public async Task<T> addUserpoint<T>(GetUserPointDTO getUserPointDTO)
+        public async Task<T> addUserpoint<T>(GetUserPointDTO getUserPointDTO, string token)
         {
             return await this.SendAsync<T>(new ApiRequest
             {
                 ApiType=SD.ApiType.POST,
                 Data=getUserPointDTO,
-                Url=SD.ProductApiBase+ "/api/Userpoint/addUserpoint"
+                Url=SD.ProductApiBase+ "/api/Userpoint/addUserpoint",
+                AccessToken=token
             });
         }
 
@@ -33,7 +34,7 @@ namespace digika_mobileapp.Services
             return await this.SendAsync<T>(new ApiRequest
             {
                 ApiType=SD.ApiType.GET,
-                Url=SD.ProductApiBase+ "/api/Userpoint/GetUserpoint/"+userpointid
+                Url=SD.ProductApiBase+ "/api/Userpoint/GetUserpoint/"+userpointid,
             });
         }
 

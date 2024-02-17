@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using MongoDB.Bson;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 
@@ -156,7 +157,7 @@ namespace Digikala.Services.Product.Controllers
                 var myproduct = await _productRepository.GetProductsbyid(id);
                 var myinfo = await _informationdb.GetInformation(myproduct.Informationid);
                 var myproductdto = _mapper.Map<ProductDTO>(myproduct);
-                myproductdto.Informationid = myinfo.ToString();
+                myproductdto.Informationid = myinfo;
                 if (myproduct.pictures != null)
                 {
                     byte[] bytes = myproduct.pictures;

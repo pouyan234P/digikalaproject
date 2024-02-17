@@ -9,7 +9,7 @@ namespace digika_mobileapp.Services.IServices
 {
    public interface IUserpointService:IBaseService
     {
-        Task<T> addUserpoint<T>(GetUserPointDTO getUserPointDTO);
+        Task<T> addUserpoint<T>(GetUserPointDTO getUserPointDTO, string token);
         Task<T> GetUserpoints<T>(int productid,UserParams userParams);
         Task<T> GetUserpoint<T>(int userpointid);
     }

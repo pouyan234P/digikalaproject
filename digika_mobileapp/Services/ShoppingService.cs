@@ -29,6 +29,16 @@ namespace digika_mobileapp.Services
             });
         }
 
+        public async Task<T> DeleteShoppingcart<T>(int detailid, string token)
+        {
+            return await this.SendAsync<T>(new ApiRequest
+            {
+                ApiType=SD.ApiType.POST,
+                Url=SD.ShoppingApiBase + "/api/Cart/deleteShoppingcart/"+ detailid,
+                AccessToken=token
+            });
+        }
+
         public async Task<T> GetAllShoppingcart<T>(int userid,UserParams userParams, string token)
         {
             return await this.SendAsync<T>(new ApiRequest

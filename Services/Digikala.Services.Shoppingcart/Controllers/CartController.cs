@@ -105,6 +105,23 @@ namespace Digikala.Services.Shoppingcart.Controllers
             }
             return Ok(_response);
         }
+        [HttpPost("deleteShoppingcart/{detailid}")]
+        public async Task<IActionResult> deleteShoppingcart(int detailid)
+        {
+            try
+            {
+                var shop = await _cartdetailRepository.deleteCartdetail(detailid);
+                _response.Result = true;
+
+            }
+            catch(Exception e)
+            {
+                _response.IsSuccess = false;
+                _response.ErrorMessages = new List<string>() { e.ToString() };
+            }
+            return Ok(_response);
+
+        }
 
     }
 }

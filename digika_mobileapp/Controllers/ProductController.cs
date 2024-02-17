@@ -3,6 +3,7 @@ using digika_mobileapp.Helper;
 using digika_mobileapp.Models;
 using digika_mobileapp.Models.Productmodel;
 using digika_mobileapp.Services.IServices;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -15,6 +16,7 @@ using System.Threading.Tasks;
 
 namespace digika_mobileapp.Controllers
 {
+    [AllowAnonymous]
     [Route("api/[controller]")]
     [ApiController]
     public class ProductController : ControllerBase

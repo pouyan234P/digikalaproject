@@ -12,5 +12,6 @@ namespace Digikala.Services.Shoppingcart.Data.Repository
         Task<Cartdetail> AddCartdetail(Cartdetail cartdetail);
         Task<Cartdetail> GetCartdetail(int id);
         Task<PagedList<Cartdetail>> GetAllCartdetail(int Userid,UserParams userParams);
+        Task<bool> deleteCartdetail(int detailid);
     }
 }

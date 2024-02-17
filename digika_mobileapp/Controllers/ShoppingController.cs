@@ -62,5 +62,21 @@ namespace digika_mobileapp.Controllers
             }
             return Ok(list);
         }
+        [HttpPost("DeleteShoppingcart/{detailid}")]
+        public async Task<IActionResult> DeleteShoppingcart(int detailid)
+        {
+            bool list = new();
+            var accessToken = await HttpContext.GetTokenAsync("access_token");
+            var response = await _shoppingService.DeleteShoppingcart<ResponseDTO>(detailid, accessToken);
+            if(response!=null && response.IsSuccess)
+            {
+                list = JsonConvert.DeserializeObject<bool>(Convert.ToString(response.Result));
+            }
+            else
+            {
+                return BadRequest(response.ErrorMessages);
+            }
+            return Ok(list);
+        }
     }
 }

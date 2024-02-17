@@ -24,6 +24,14 @@ namespace Digikala.Services.Shoppingcart.Data.Repository
             return mycartdetail;
         }
 
+        public async Task<bool> deleteCartdetail(int detailid)
+        {
+            var mydetail = await _db.cartdetails.Where(x => x.id == detailid).Select(x => x).Include(x => x.productid).FirstOrDefaultAsync();
+            _db.Remove(mydetail);
+            _db.SaveChanges();
+            return true;
+        }
+
         public async Task<PagedList<Cartdetail>> GetAllCartdetail(int Userid,UserParams userParams)
         {
             var mycartdetail =  _db.cartdetails.Where(x => x.Headerid.Userid == Userid).Include(x => x.productid).Include(x => x.Headerid);
